@@ -53,6 +53,8 @@ public:
 	T& operator[](int pos);
 	bool member(const T& other);
 
+	void reverse();
+	bool empty();
 	void sort();
 
 	int getCount()const;
@@ -112,7 +114,7 @@ inline DLList<T>::DLList(const DLList<T>& other)
 template<class T>
 inline DLList<T>& DLList<T>::operator=(const DLList<T>& other)
 {
-	if (this->first != other.first)
+	if (this != &other)
 	{
 		erase();
 		copy(other);
@@ -130,13 +132,16 @@ inline DLList<T>::~DLList()
 template<class T>
 inline DLList<T> DLList<T>::operator+(const T& element) const
 {
-	return DLList<T>();
+	DLList<T> result(*this);
+	result += element;
+	return result;
 }
 
 template<class T>
 inline DLList<T>& DLList<T>::operator+=(const T& element)
 {
-	// TODO: insert return statement here
+	pushBack(element);
+	return *this;
 }
 
 template<class T>
@@ -291,19 +296,65 @@ inline T& DLList<T>::getFromPos(int index)
 template<class T>
 inline T& DLList<T>::operator[](int pos)
 {
-	// TODO: insert return statement here
+	return getFromPos(pos);
 }
 
 template<class T>
 inline bool DLList<T>::member(const T& other)
 {
+	Box<T>* crr = this->first;
+	for (int i = 1; i <= count; i++)
+	{
+		if (crr->data == other) return true;
+		crr = crr->next;
+	}
 	return false;
+}
+
+template<class T>
+inline void DLList<T>::reverse()
+{
+	Box<T>* crr = this->first , *savenext;
+
+	for (int i = 1; i <= count; i++)
+	{
+		savenext = crr->next;
+		crr->next = crr->prev;
+		crr->prev = savenext;
+
+		crr = savenext;
+	}
+
+	savenext = this->first;
+	this->first = this->last;
+}
+
+template<class T>
+inline bool DLList<T>::empty()
+{
+	return this->first == nullptr;
 }
 
 template<class T>
 inline void DLList<T>::sort()
 {
+	
 
+	for (int i = 0; i <= count - 2; i++)
+	{
+		Box<T>* crr = this->first;
+		for (int j = 0; j < count - i - 1; j++)
+		{
+			if (crr->data > crr->next->data)
+			{
+				T save = crr->data;
+				crr->data = crr->next->data;
+				crr->next->data = save;
+			}
+
+			crr = crr->next;
+		}
+	}
 }
 
 template<class T>
