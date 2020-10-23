@@ -10,12 +10,9 @@ int main()
     std::cout << std::endl;
     
     list.pushAfter(2, 55555);
-
-    list.print();
+    list.print(); std::cout << std::endl;
     
-    std::cout << std::endl;
     int save = list.popBack();
-
     list.print();
     std::cout << std::endl << save;
     std::cout << std::endl;
@@ -40,15 +37,19 @@ int main()
     list2.print();
     std::cout << std::endl;
     list2.removeAt(333);
-    std::cout << "removed 333 from list:\n" << list2 << std::endl;
-
-    /*
-    list2 = list2 + 99999;
-    list2.print();
-    */
+    std::cout << "removed 333 from list:\n" << list2 << std::endl;    
 
     DLList<int> copytest(list2);
     copytest.pushBack(1231231231).pushFront(44444444).print();
     copytest.reverse();
     std::cout << "\nREVERSED\n" << copytest << "\n";
+    copytest.sort();
+    copytest.reverse();
+    copytest += 1616;
+    std::cout << "+=\n" << copytest << std::endl;
+    
+    //BUG
+    //list2 = list2 + 99999;
+    //list2.print();
+
 }

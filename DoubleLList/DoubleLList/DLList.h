@@ -8,10 +8,11 @@ struct Box
 	Box* prev;
 	T data;
 
-	Box()
+	Box() {this->next = this->prev = nullptr;}
+	Box(const T& data)
 	{
-		next = nullptr;
-		prev = nullptr;
+		this->data = data;
+		this->next = this->prev = nullptr;
 	}
 	Box(const T& data, Box* prev = nullptr, Box* next = nullptr)
 	{
@@ -40,7 +41,7 @@ public:
 	DLList& operator=(const DLList& other);
 	~DLList();
 
-	DLList<T> operator + (const T& element)const;
+	DLList<T>& operator + (const T& element)const; //BUG
 	DLList<T>& operator += (const T& element);
 
 	DLList<T>& pushBack(const T& inf);
@@ -52,6 +53,7 @@ public:
 	T& getFromPos(int index);
 	T& operator[](int pos);
 	bool member(const T& other);
+	Box<T>& findMiddle();
 
 	void reverse();
 	bool empty();
@@ -119,7 +121,6 @@ inline DLList<T>& DLList<T>::operator=(const DLList<T>& other)
 		erase();
 		copy(other);
 	}
-
 	return *this;
 }
 
@@ -130,10 +131,10 @@ inline DLList<T>::~DLList()
 }
 
 template<class T>
-inline DLList<T> DLList<T>::operator+(const T& element) const
+inline DLList<T>& DLList<T>::operator+(const T& element) const // BUG!
 {
 	DLList<T> result(*this);
-	result += element;
+	result.pushBack(element);
 	return result;
 }
 
@@ -158,9 +159,7 @@ inline DLList<T>& DLList<T>::pushBack(const T& inf)
 		this->last->next = newBox;
 		this->last = newBox;
 	}
-
 	count++;
-
 	return *this;
 }
 
@@ -312,9 +311,24 @@ inline bool DLList<T>::member(const T& other)
 }
 
 template<class T>
+inline Box<T>& DLList<T>::findMiddle()
+{
+	if (first == last) return first;
+	Box<T>* left = this->first;
+	Box<T>* right = this->last;
+
+	while (left != right && left->next != right) {
+		left = left->next;
+		right = right->prev;
+	}
+	return left;
+}
+
+template<class T>
 inline void DLList<T>::reverse()
 {
-	Box<T>* crr = this->first , *savenext;
+	Box<T>* crr = this->first;
+	Box<T>* savenext;
 
 	for (int i = 1; i <= count; i++)
 	{
@@ -327,6 +341,7 @@ inline void DLList<T>::reverse()
 
 	savenext = this->first;
 	this->first = this->last;
+	this->last = savenext;
 }
 
 template<class T>
@@ -338,9 +353,7 @@ inline bool DLList<T>::empty()
 template<class T>
 inline void DLList<T>::sort()
 {
-	
-
-	for (int i = 0; i <= count - 2; i++)
+	for (int i = 0; i < count - 1; i++)
 	{
 		Box<T>* crr = this->first;
 		for (int j = 0; j < count - i - 1; j++)
@@ -351,7 +364,6 @@ inline void DLList<T>::sort()
 				crr->data = crr->next->data;
 				crr->next->data = save;
 			}
-
 			crr = crr->next;
 		}
 	}
