@@ -4,9 +4,9 @@
 template<class T>
 struct Box
 {
-	Box* next;
-	Box* prev;
 	T data;
+	Box* prev;
+	Box* next;
 
 	Box() {this->next = this->prev = nullptr;}
 	Box(const T& data)
@@ -55,21 +55,15 @@ public:
 	bool member(const T& other);
 	Box<T>& findMiddle();
 
+	void swap(Box<T>* left, Box<T>* right);
+
 	void reverse();
 	bool empty();
 	void sort();
 
 	int getCount()const;
 
-	void print()
-	{
-		Box<T>* current = this->first;
-		while (current != nullptr)
-		{
-			std::cout << current->data << " ";
-			current = current->next;
-		}
-	}
+	void print()const;
 
 	template<class E>
 	friend std::ostream& operator << (std::ostream&, const DLList<E>&);
@@ -325,6 +319,40 @@ inline Box<T>& DLList<T>::findMiddle()
 }
 
 template<class T>
+inline void DLList<T>::swap(Box<T>* left, Box<T>* right)
+{
+	/**/
+	if (left == nullptr || right == nullptr) return;
+	
+	if (left == first) first == right;
+	if (right == last) last == left;
+	
+	Box<T>* beforeLeft = left->prev;
+	Box<T>* afterLeft = left->next;
+	Box<T>* beforeRight = right->prev;
+	Box<T>* afterRight = right->next;
+
+	if (beforeLeft != nullptr)
+	{
+		std::swap(beforeLeft->next, beforeRight->next);
+	}
+	else {
+		this->first = right;
+	}
+
+	if (afterRight != nullptr)
+	{
+		std::swap(afterLeft->prev, afterRight->prev);
+	}
+	else {
+		this->last = left;
+	}
+
+	std::swap(right->prev, left->prev);
+	std::swap(right->next, left->next);
+}
+
+template<class T>
 inline void DLList<T>::reverse()
 {
 	Box<T>* crr = this->first;
@@ -373,6 +401,17 @@ template<class T>
 inline int DLList<T>::getCount() const
 {
 	return this->count;
+}
+
+template<class T>
+inline void DLList<T>::print() const
+{
+	Box<T>* current = this->first;
+	while (current != nullptr)
+	{
+		std::cout << current->data << " ";
+		current = current->next;
+	}
 }
 
 template<class T>
