@@ -5,13 +5,6 @@
 #include <string>
 #include <fstream>
 
-void Welcome();
-void Login();
-void Register();
-void ProfileMenu();
-void Menu();
-
-
 int main()
 {
 }

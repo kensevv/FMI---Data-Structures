@@ -147,15 +147,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Album.cpp" />
     <ClCompile Include="Playlist.cpp" />
     <ClCompile Include="Project - Musical Collection.cpp" />
     <ClCompile Include="Song.cpp" />
     <ClCompile Include="User.cpp" />
+    <ClCompile Include="UserInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Album.h" />
+    <ClInclude Include="Genre.h" />
     <ClInclude Include="Playlist.h" />
     <ClInclude Include="Song.h" />
     <ClInclude Include="User.h" />
+    <ClInclude Include="UserInterface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
