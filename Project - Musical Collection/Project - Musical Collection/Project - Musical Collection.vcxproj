@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Album.cpp" />
+    <ClCompile Include="Date.cpp" />
     <ClCompile Include="Playlist.cpp" />
     <ClCompile Include="Project - Musical Collection.cpp" />
     <ClCompile Include="Song.cpp" />
@@ -156,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Album.h" />
+    <ClInclude Include="Date.h" />
     <ClInclude Include="Genre.h" />
     <ClInclude Include="Playlist.h" />
     <ClInclude Include="Song.h" />
