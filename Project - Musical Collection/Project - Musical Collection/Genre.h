@@ -1,6 +1,6 @@
 #pragma once
 
-enum class Genre
+enum Genre
 {
 	defaultGenre=0,
 	Pop,
