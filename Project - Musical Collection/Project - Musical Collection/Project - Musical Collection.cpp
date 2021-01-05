@@ -14,7 +14,7 @@
 #include "UserInterface.h"
 
 std::vector<User> users;
-std::vector<Song*> playlists;
+std::vector<Playlist> playlists;
 std::vector<Song> songs;
 
 void fileWrite();
@@ -90,10 +90,10 @@ void fileWritePlaylists()
 		output << playlists.size() << std::endl;
 		for (size_t i = 0; i < playlists.size(); i++)
 		{
-			output << playlists.size() << std::endl;
-			for (size_t i = 0; i < playlists.size(); i++)
+			output << playlists[i].getSongs().size();
+			for (size_t j = 0; j < playlists[i].getSongs().size(); j++)
 			{
-				output << playlists[i]->getID() << std::endl;
+				output << playlists[i].getSongs()[j]->getID();
 			}
 		}
 	}

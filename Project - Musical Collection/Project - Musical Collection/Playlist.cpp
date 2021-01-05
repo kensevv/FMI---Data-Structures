@@ -8,6 +8,11 @@ Playlist::Playlist(std::string name)
 {
 }
 
+const std::vector<Song*>& Playlist::getSongs() const
+{
+	return this->songs;
+}
+
 void Playlist::setName(const std::string& name)
 {
 }

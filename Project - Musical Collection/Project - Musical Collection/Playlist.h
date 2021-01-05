@@ -12,6 +12,8 @@ private:
 public:
 	Playlist();
 	Playlist(std::string name);
+	
+	const std::vector<Song*>& getSongs() const;
 
 	void setName(const std::string& name);
 	const std::string& getName() const;
