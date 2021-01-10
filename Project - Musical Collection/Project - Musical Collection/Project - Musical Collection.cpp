@@ -13,6 +13,8 @@
 #include "User.h"
 #include "UserInterface.h"
 
+#include <map>
+
 std::vector<User> users;
 std::vector<Playlist> playlists;
 std::vector<Song> songs;
@@ -36,6 +38,10 @@ void Logout();
 void Menu();
 //todo
 
+#include <algorithm>
+bool compare(Song* left, Song* right) {
+	return left->getSingerName() < right->getSingerName();
+}
 int main()
 {
 
@@ -76,7 +82,7 @@ void fileWriteSongs()
 			output << songs[i].getAlbumName() << std::endl;
 			output << songs[i].getYearOfProduction() << std::endl;
 			output << songs[i].getGenre() << std::endl;
-			output << songs[i].getRaiting() << std::endl;
+			// todo map ratings
 		}
 	}
 	output.close();

@@ -5,7 +5,7 @@ enum Genre
 	defaultGenre=0,
 	Pop,
 	Rap,
-	HipHip,
+	HipHop,
 	Rock,
 	Metal,
 	Jazz,

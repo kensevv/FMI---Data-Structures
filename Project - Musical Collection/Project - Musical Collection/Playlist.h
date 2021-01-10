@@ -11,15 +11,15 @@ private:
 
 public:
 	Playlist();
-	Playlist(std::string name);
+	Playlist(std::string name, std::vector<Song*> songs);
 	
-	const std::vector<Song*>& getSongs() const;
+	std::vector<Song*>& getSongs();
 
 	void setName(const std::string& name);
 	const std::string& getName() const;
 	
-	void addSong(const Song* song);
-	void removeSong(const Song* song);
+	void addSong(Song* song);
+	void removeSong(Song* song);
 
 	void sortByAlfOrder();
 };
