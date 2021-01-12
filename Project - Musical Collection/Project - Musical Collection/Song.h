@@ -16,11 +16,11 @@ private:
 	size_t yearOfProduction;
 	Genre genre;
 
-	std::map<size_t, double> ratings; // map that contains the ID of the user who has rated and the rating given by him.
+	std::map<std::string, double> ratings; // map that contains the Username of the user who has rated and the rating given by him.
 public:
 	static size_t nextID;
 	Song();
-	Song(const std::string& songName, const std::string& singerName, const std::string& albumName, size_t yearOfProduction, const Genre& genre, const std::map<size_t, double>& ratings);
+	Song(const std::string& songName, const std::string& singerName, const std::string& albumName, size_t yearOfProduction, const Genre& genre, const std::map<std::string, double>& ratings);
 	
 	const size_t getID() const;
 	const std::string& getSongName() const;
@@ -30,8 +30,8 @@ public:
 	Genre getGenre() const;
 	
 	const double getRating() const;
-	void rateSong(size_t ID, double rating);
-	bool userIDhasRated(size_t ID);
+	void rateSong(std::string username, double rating);
+	bool usernameHasRated(std::string username);
 
 	//setters
 	void setID(size_t ID);

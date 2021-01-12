@@ -12,7 +12,7 @@ Song::Song()
     this->genre = defaultGenre;
 }
 
-Song::Song(const std::string& songName, const std::string& singerName, const std::string& albumName, size_t yearOfProduction, const Genre& genre, const std::map<size_t, double>& ratings)
+Song::Song(const std::string& songName, const std::string& singerName, const std::string& albumName, size_t yearOfProduction, const Genre& genre, const std::map<std::string, double>& ratings)
 {
     this->songName = songName;
     this->singerName = singerName;
@@ -62,16 +62,16 @@ const double Song::getRating() const
     return sumRatings / this->ratings.size();
 }
 
-void Song::rateSong(size_t ID, double rating)
+void Song::rateSong(std::string username, double rating)
 {
-    this->ratings.insert(std::pair<size_t, double>(ID, rating));
+    this->ratings.insert(std::pair<std::string, double>(username, rating));
 }
 
-bool Song::userIDhasRated(size_t ID)
+bool Song::usernameHasRated(std::string username)
 {
     for (const auto& it : this->ratings)
     {
-        if (ID == it.first)
+        if (username == it.first)
         {
             return true;
         }

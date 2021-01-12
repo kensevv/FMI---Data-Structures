@@ -22,4 +22,6 @@ public:
 	void removeSong(Song* song);
 
 	void sortByAlfOrder();
+
+	friend std::ostream& operator<<(std::ostream& out, const Playlist& current);
 };

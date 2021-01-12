@@ -49,3 +49,13 @@ void Playlist::sortByAlfOrder()
 		return left->getSingerName() < right->getSingerName();
 		});
 }
+
+std::ostream& operator<<(std::ostream& out, const Playlist& current)
+{
+	out << "Playlist: '" << current.getName() << "' has " << current.songs.size() << " songs:" << std::endl << std::endl;
+	for (size_t i = 0; i < current.songs.size(); i++)
+	{
+		std::cout << i+1 << ") "<< *current.songs[i] << std::endl;
+	}
+	return out;
+}

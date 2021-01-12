@@ -13,11 +13,7 @@
 #include "User.h"
 #include "UserInterface.h"
 
-#include <map>
-
-std::vector<User> users;
-std::vector<Playlist> playlists;
-std::vector<Song> songs;
+#include "GlobalVariables.h"
 
 void fileWrite();
 void fileWriteUsers();
@@ -38,13 +34,9 @@ void Logout();
 void Menu();
 //todo
 
-#include <algorithm>
-bool compare(Song* left, Song* right) {
-	return left->getSingerName() < right->getSingerName();
-}
 int main()
 {
-
+	
 }
 
 void fileWrite()
@@ -59,8 +51,8 @@ void fileWriteUsers()
 	std::ofstream output("users.txt");
 	if (output.is_open())
 	{
-		output << users.size() << std::endl;
-		for (size_t i = 0; i < users.size(); i++)
+		output << Gusers.size() << std::endl;
+		for (size_t i = 0; i < Gusers.size(); i++)
 		{
 
 		}
@@ -73,15 +65,15 @@ void fileWriteSongs()
 	std::ofstream output("songs.txt");
 	if (output.is_open())
 	{
-		output << songs.size() << std::endl;
-		for (size_t i = 0; i < songs.size(); i++)
+		output << Gsongs.size() << std::endl;
+		for (size_t i = 0; i < Gsongs.size(); i++)
 		{
-			output << songs[i].getID() << std::endl;
-			output << songs[i].getSongName() << std::endl;
-			output << songs[i].getSingerName() << std::endl;
-			output << songs[i].getAlbumName() << std::endl;
-			output << songs[i].getYearOfProduction() << std::endl;
-			output << songs[i].getGenre() << std::endl;
+			output << Gsongs[i].getID() << std::endl;
+			output << Gsongs[i].getSongName() << std::endl;
+			output << Gsongs[i].getSingerName() << std::endl;
+			output << Gsongs[i].getAlbumName() << std::endl;
+			output << Gsongs[i].getYearOfProduction() << std::endl;
+			output << Gsongs[i].getGenre() << std::endl;
 			// todo map ratings
 		}
 	}
@@ -93,13 +85,13 @@ void fileWritePlaylists()
 	std::ofstream output("playlists.txt");
 	if (output.is_open())
 	{
-		output << playlists.size() << std::endl;
-		for (size_t i = 0; i < playlists.size(); i++)
+		output << Gplaylists.size() << std::endl;
+		for (size_t i = 0; i < Gplaylists.size(); i++)
 		{
-			output << playlists[i].getSongs().size();
-			for (size_t j = 0; j < playlists[i].getSongs().size(); j++)
+			output << Gplaylists[i].getSongs().size();
+			for (size_t j = 0; j < Gplaylists[i].getSongs().size(); j++)
 			{
-				output << playlists[i].getSongs()[j]->getID();
+				output << Gplaylists[i].getSongs()[j]->getID();
 			}
 		}
 	}
