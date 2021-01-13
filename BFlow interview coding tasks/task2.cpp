@@ -2,21 +2,21 @@
 
 #include <iostream>
 
-bool isSubsequence(int firstArr[], int firstSize, int secondArr[], int secondSize);
+bool isSubsequence(int firstArr[], int firstSize, int secondArr[], int secondSize, bool adjacent = false); // by default the adjacent modifier is set to false, if its given as true then it applies.
 
 int main()
 {
 	//can aswell easily be implemented with vectors instead of arrays
 	int arr1[] = { 1,2,3,4, 1,6,1,2,5,6,7,1 };
-	int arr2[] = { 2,1,6,1 };
+	int arr2[] = { 1,6,1,2,5,6,1 };
 
 	int size1 = sizeof(arr1) / sizeof(arr1[0]);
 	int size2 = sizeof(arr2) / sizeof(arr2[0]);
 
-	std::cout << isSubsequence(arr1, size1, arr2, size2);
+	std::cout << isSubsequence(arr1, size1, arr2, size2); // give adjacent modifier as bool as additional parameter to turn it on;
 }
 
-bool isSubsequence(int firstArr[], int firstSize, int secondArr[], int secondSize)
+bool isSubsequence(int firstArr[], int firstSize, int secondArr[], int secondSize, bool adjacent)
 {
 	int firstArrayIndex = 0;
 
@@ -27,6 +27,10 @@ bool isSubsequence(int firstArr[], int firstSize, int secondArr[], int secondSiz
 		{
 			if (secondArr[i] == firstArr[j])
 			{
+				if (adjacent == true)
+				{
+					if (j != firstArrayIndex) return false;
+				}
 				found = true;
 				firstArrayIndex = j + 1; // the main array will continue from the next index that follows the found int
 				break; // breaking to stop at the first found.
