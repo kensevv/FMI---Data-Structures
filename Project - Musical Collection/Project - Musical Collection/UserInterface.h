@@ -28,6 +28,7 @@ public:
 	void loadPlaylistByName(const std::string& name);
 	void sortPlaylist(); // criteria
 	void showCurrPlaylistInfo(); // info for songs in current playlist
+	void showAllPlaylistsbyName();
 
 	void logout(); // logout from user and unload all data from the global containers
 };

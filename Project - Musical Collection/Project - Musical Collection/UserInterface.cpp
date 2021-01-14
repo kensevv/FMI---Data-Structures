@@ -43,6 +43,7 @@ void UserInterface::addSong()
 
 void UserInterface::generatePlaylistForUser()
 {
+	//TODO
 }
 
 void UserInterface::saveCurrentPlaylist(const std::string& name)
@@ -71,6 +72,13 @@ void UserInterface::loadPlaylistByName(const std::string& name)
 
 void UserInterface::sortPlaylist()
 {
+	if (this->currentPlaylist == nullptr)
+	{
+		std::cout << "There is no loaded playlists!" << std::endl;
+		return;
+	}
+
+	this->currentPlaylist->sortByAlfOrder();
 }
 
 void UserInterface::showCurrPlaylistInfo()
@@ -82,6 +90,14 @@ void UserInterface::showCurrPlaylistInfo()
 	}
 
 	std::cout << *this->currentPlaylist;
+}
+
+void UserInterface::showAllPlaylistsbyName()
+{
+	for (size_t i = 0; i < Gplaylists.size(); i++)
+	{
+		std::cout << i + 1 << ") " << Gplaylists[i].getName() << std::endl;
+	}
 }
 
 void UserInterface::logout()

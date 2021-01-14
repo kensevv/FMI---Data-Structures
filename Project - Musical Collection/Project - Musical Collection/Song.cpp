@@ -79,6 +79,11 @@ bool Song::usernameHasRated(std::string username)
     return false;
 }
 
+const std::map<std::string, double>& Song::getMAPratings() const
+{
+    return this->ratings;
+}
+
 void Song::setSongName(const std::string& songName)
 {
     this->songName = songName;

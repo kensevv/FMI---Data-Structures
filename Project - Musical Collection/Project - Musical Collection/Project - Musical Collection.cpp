@@ -54,7 +54,25 @@ void fileWriteUsers()
 		output << Gusers.size() << std::endl;
 		for (size_t i = 0; i < Gusers.size(); i++)
 		{
-
+			output << Gusers[i].getUsername() << std::endl;
+			output << Gusers[i].getPassword() << std::endl;
+			output << Gusers[i].getFullName() << std::endl;
+			//date
+			output << Gusers[i].getBirthday().day << std::endl;
+			output << Gusers[i].getBirthday().month << std::endl;
+			output << Gusers[i].getBirthday().year << std::endl;
+			//favgenres - vector
+			output << Gusers[i].getFavGenres().size() << std::endl;
+			for (size_t j = 0; j < Gusers[i].getFavGenres().size(); j++)
+			{
+				output << Gusers[i].getFavGenres()[j] << std::endl;
+			}
+			//playlists - vector
+			output << Gusers[i].getPlaylists().size() << std::endl;
+			for (size_t j = 0; j < Gusers[i].getPlaylists().size(); j++)
+			{
+				output << Gusers[i].getPlaylists()[j]->getName() << std::endl;
+			}
 		}
 	}
 	output.close();
@@ -74,7 +92,14 @@ void fileWriteSongs()
 			output << Gsongs[i].getAlbumName() << std::endl;
 			output << Gsongs[i].getYearOfProduction() << std::endl;
 			output << Gsongs[i].getGenre() << std::endl;
-			// todo map ratings
+			
+			//map ratings
+			output << Gsongs[i].getMAPratings().size() << std::endl;
+			for (const auto& x : Gsongs[i].getMAPratings())
+			{
+				output << x.first << std::endl;
+				output << x.second << std::endl;
+			}
 		}
 	}
 	output.close();
@@ -88,10 +113,10 @@ void fileWritePlaylists()
 		output << Gplaylists.size() << std::endl;
 		for (size_t i = 0; i < Gplaylists.size(); i++)
 		{
-			output << Gplaylists[i].getSongs().size();
+			output << Gplaylists[i].getSongs().size() << std::endl;
 			for (size_t j = 0; j < Gplaylists[i].getSongs().size(); j++)
 			{
-				output << Gplaylists[i].getSongs()[j]->getID();
+				output << Gplaylists[i].getSongs()[j]->getID() << std::endl;
 			}
 		}
 	}
