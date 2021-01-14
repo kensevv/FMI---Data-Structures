@@ -1,8 +1,7 @@
 #pragma once
-
 enum Genre
 {
-	defaultGenre=0,
+	defaultGenre = 0,
 	Pop,
 	Rap,
 	HipHop,
@@ -16,3 +15,4 @@ enum Genre
 	Techno,
 	House
 };
+void printGenre(Genre genre);

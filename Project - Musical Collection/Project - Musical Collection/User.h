@@ -39,4 +39,7 @@ public:
 
 	void removeFavGenre(const Genre& genre);
 	void removeFavPlaylist(Playlist* playlist);
+
+	friend std::ostream& operator<<(std::ostream& out, const User& current);
+	friend std::istream& operator>>(std::istream& in, User& current);
 };

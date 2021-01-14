@@ -124,50 +124,7 @@ std::ostream& operator<<(std::ostream& out, const Song& current)
     out << current.singerName << " - " << current.songName << std::endl
         << "Album: " << current.albumName << "; " << "Year: " <<current.yearOfProduction << std::endl
         << "Genre: ";
-    switch (current.genre)
-    {
-    case 0:
-        out << "Default";
-        break;
-    case 1:
-        out << "Pop";
-        break;
-    case 2:
-        out << "Rap";
-        break;
-    case 3:
-        out << "HipHop";
-        break;
-    case 4:
-        out << "Rock";
-        break;
-    case 5:
-        out << "Metal";
-        break;
-    case 6:
-        out << "Jazz";
-        break;
-    case 7:
-        out << "Folk";
-        break;
-    case 8:
-        out << "Classical";
-        break;
-    case 9:
-        out << "Country";
-        break;
-    case 10:
-        out << "Electronic";
-        break;
-    case 11:
-        out << "Techno";
-        break;
-    case 12:
-        out << "House";
-        break;
-    default:
-        break;
-    }
+    printGenre(current.genre);
     out << " Rating: ";
     if (!current.ratings.empty()) out << current.getRating() << std::endl;
     else out << "Non-Rated" << std::endl;

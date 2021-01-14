@@ -101,3 +101,22 @@ void User::removeFavPlaylist(Playlist* playlist)
         }
     }
 }
+
+std::ostream& operator<<(std::ostream& out, const User& current)
+{
+    out << current.fullName << " - " << current.username << ". " << std::endl <<
+        current.birthday << std::endl <<
+        "Favourite genres: ";
+    for (size_t i = 0; i < current.getFavGenres().size(); i++)
+    {
+        printGenre(current.getFavGenres()[i]);
+        std::cout << "; ";
+    }
+    std::cout << std::endl << "Playlists: ";
+    for (size_t i = 0; i < current.getPlaylists().size(); i++)
+    {
+        std::cout << current.getPlaylists()[i]->getName() << "; ";
+    }
+    std::cout << std::endl;
+    return out;
+}

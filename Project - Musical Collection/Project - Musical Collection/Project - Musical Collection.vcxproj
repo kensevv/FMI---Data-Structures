@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Date.cpp" />
+    <ClCompile Include="Genre.cpp" />
     <ClCompile Include="GlobalVariables.cpp" />
     <ClCompile Include="Playlist.cpp" />
     <ClCompile Include="Project - Musical Collection.cpp" />

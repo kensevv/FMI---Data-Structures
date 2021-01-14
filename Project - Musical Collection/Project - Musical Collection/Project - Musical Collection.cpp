@@ -26,6 +26,7 @@ void fileRead();
 void fileReadSongs();
 Song* findSongByID(int songID);
 void fileReadPlaylists();
+Playlist* findPlaylistByName(std::string name);
 void fileReadUsers();
 
 void Register();
@@ -40,7 +41,6 @@ void Menu();
 int main()
 {
 	fileRead();
-
 }
 
 void clearScreen()
@@ -227,21 +227,58 @@ void fileReadPlaylists()
 	
 }
 
+Playlist* findPlaylistByName(std::string name)
+{
+	for (size_t i = 0; i < Gplaylists.size(); i++)
+	{
+		if (Gplaylists[i].getName() == name)
+		{
+			return &Gplaylists[i];
+		}
+	}
+}
+
 void fileReadUsers()
 {
 	std::ifstream input("users.txt");
 	if (input.is_open())
 	{
-		size_t size;
-		input >> size;
-		input.get();
-		for (size_t i = 0; i < size; i++)
+		int userCount; input >> userCount; input.get();
+		for (size_t i = 0; i < userCount; i++)
 		{
-
+			User newUser;
+			std::string stringInput;
+			std::getline(input, stringInput);
+			newUser.setUsername(stringInput);
+			std::getline(input, stringInput);
+			newUser.setPassword(stringInput);
+			std::getline(input, stringInput);
+			newUser.setFullName(stringInput);
+			//date
+			int day; input >> day; input.get();
+			int month; input >> month; input.get();
+			int year; input >> year; input.get();
+			newUser.setBirthday(Date(year, month, day));
+			//favourite genres - vector
+			int favGenresCount; input >> favGenresCount; input.get();
+			for (int i = 0; i < favGenresCount; i++)
+			{
+				int genre; input >> genre; input.get();
+				newUser.addFavGenre((Genre)genre);
+			}
+			//playlists - vector
+			int playlistsCount; input >> playlistsCount; input.get();
+			for (int i = 0; i < playlistsCount; i++)
+			{
+				std::string playlistName;
+				std::getline(input, playlistName);
+				newUser.addFavPlaylist(findPlaylistByName(playlistName));
+			}
+			Gusers.push_back(newUser);
 		}
+
+		input.close();
 	}
-	
-	input.close();
 }
 
 void Register() 

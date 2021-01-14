@@ -36,6 +36,9 @@
     <ClCompile Include="GlobalVariables.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Genre.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Song.h">
