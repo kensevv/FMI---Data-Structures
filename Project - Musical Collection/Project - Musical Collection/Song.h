@@ -33,7 +33,7 @@ public:
 	void rateSong(std::string username, double rating);
 	bool usernameHasRated(std::string username);
 
-	const std::map<std::string, double>& getMAPratings() const;
+	std::map<std::string, double>& getMAPratings();
 
 	//setters
 	void setID(size_t ID);

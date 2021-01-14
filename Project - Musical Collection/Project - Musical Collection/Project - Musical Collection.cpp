@@ -15,15 +15,18 @@
 
 #include "GlobalVariables.h"
 
+void clearScreen();
+
 void fileWrite();
 void fileWriteUsers();
 void fileWriteSongs();
 void fileWritePlaylists();
 
 void fileRead();
-void fileReadUsers();
 void fileReadSongs();
+Song* findSongByID(int songID);
 void fileReadPlaylists();
+void fileReadUsers();
 
 void Register();
 void Login();
@@ -36,7 +39,13 @@ void Menu();
 
 int main()
 {
-	
+	fileRead();
+
+}
+
+void clearScreen()
+{
+	system("CLS");
 }
 
 void fileWrite()
@@ -113,6 +122,7 @@ void fileWritePlaylists()
 		output << Gplaylists.size() << std::endl;
 		for (size_t i = 0; i < Gplaylists.size(); i++)
 		{
+			output << Gplaylists[i].getName() << std::endl;
 			output << Gplaylists[i].getSongs().size() << std::endl;
 			for (size_t j = 0; j < Gplaylists[i].getSongs().size(); j++)
 			{
@@ -125,47 +135,112 @@ void fileWritePlaylists()
 
 void fileRead()
 {
-	fileReadUsers();
 	fileReadSongs();
 	fileReadPlaylists();
+	fileReadUsers();
 }
-
-void fileReadUsers()
-{
-	std::ifstream input("users.txt");
-	size_t size;
-	input >> size;
-	input.get();
-	for (size_t i = 0; i < size; i++)
-	{
-
-	}
-	input.close();
-}
-
 void fileReadSongs()
 {
 	std::ifstream input("songs.txt");
-	size_t size;
-	input >> size;
-	input.get();
-	for (size_t i = 0; i < size; i++)
+	if (input.is_open())
 	{
+		size_t numberSongs;
+		input >> numberSongs;
+		input.get();
+		for (size_t i = 0; i < numberSongs; i++)
+		{
+			Song newSong;
+			//song ID
+			int ID; input >> ID;
+			newSong.setID(ID);
+			input.get();
 
+			std::string stringinputs;
+			//song name
+			std::getline(input, stringinputs);
+			newSong.setSongName(stringinputs);
+			//singer name
+			std::getline(input, stringinputs);
+			newSong.setSingerName(stringinputs);
+			//album name
+			std::getline(input, stringinputs);
+			newSong.setAlbumName(stringinputs);
+
+			//year of production
+			int year; input >> year; input.get();
+			newSong.setYearOfProduction(year);
+			//genre
+			int genre; input >> genre; input.get();
+			newSong.setGenre(genre);
+			//map ratings
+			int mapsize; input >> mapsize; input.get();
+			for (size_t i = 0; i < mapsize; i++)
+			{
+				std::string username;
+				double rating;
+				std::getline(input, username);
+				input >> rating; input.get();
+
+				newSong.getMAPratings().insert(std::pair<std::string,double>(username,rating));
+			}
+			Gsongs.push_back(newSong);
+		}
+		input.close();
 	}
-	input.close();
+}
+
+Song* findSongByID(int songID)
+{
+	for (size_t i = 0; i < Gsongs.size(); i++)
+	{
+		if (Gsongs[i].getID() == songID)
+		{
+			return &Gsongs[i];
+		}
+	}
 }
 
 void fileReadPlaylists()
 {
 	std::ifstream input("playlists.txt");
-	size_t size;
-	input >> size;
-	input.get();
-	for (size_t i = 0; i < size; i++)
+	if (input.is_open())
 	{
-
+		int numberPlaylists;
+		input >> numberPlaylists; input.get();
+		for (size_t i = 0; i < numberPlaylists; i++)
+		{
+			Playlist newPlaylist;
+			std::string name;
+			std::getline(input, name);
+			newPlaylist.setName(name);
+			int numberSongsin; input >> numberSongsin; input.get();
+			for (size_t j = 0; j < numberSongsin; j++)
+			{
+				int songID;
+				input >> songID; input.get();
+				newPlaylist.addSong(findSongByID(songID));
+			}
+			Gplaylists.push_back(newPlaylist);
+		}
+		input.close();
 	}
+	
+}
+
+void fileReadUsers()
+{
+	std::ifstream input("users.txt");
+	if (input.is_open())
+	{
+		size_t size;
+		input >> size;
+		input.get();
+		for (size_t i = 0; i < size; i++)
+		{
+
+		}
+	}
+	
 	input.close();
 }
 
