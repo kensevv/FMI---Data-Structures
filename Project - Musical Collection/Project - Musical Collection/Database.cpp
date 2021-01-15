@@ -1,4 +1,4 @@
-#include "GlobalVariables.h"
+#include "Database.h"
 
 std::vector<User> Gusers;
 std::vector<Playlist> Gplaylists;
@@ -234,5 +234,21 @@ void fileReadUsers()
 		}
 
 		input.close();
+	}
+}
+
+void listAllSongs()
+{
+	for (size_t i = 0; i < Gsongs.size(); i++)
+	{
+		std::cout << Gsongs[i] << std::endl;
+	}
+}
+
+void listAllPlaylists()
+{
+	for (size_t i = 0; i < Gplaylists.size(); i++)
+	{
+		std::cout << Gplaylists[i] << std::endl;
 	}
 }

@@ -1,7 +1,7 @@
 #include "Genre.h"
 #include <iostream>
-
-
+#include <string>
+#include "algorithms.h"
 
 void printGenre(Genre genre)
 {
@@ -49,4 +49,20 @@ void printGenre(Genre genre)
     default:
         break;
     }
+}
+
+Genre genreInput()
+{
+    std::cout << "Choose genre: (1)Pop, (2)Rap, (3)HipHop, (4)Rock, (5)Metal, (6)Jazz, (7)Folk"
+        << "(8)Classical, (9)Country, (10)Electronic, (11)Techno, (12)House" << std::endl
+        << ">";
+    std::string option;
+    std::getline(std::cin, option);
+    int genre = validateStringToInt(option);
+    if (genre == -1)
+    {
+        std::cout << "Wrong input, genre set to default genre." << std::endl;
+        return (Genre)0;
+    }
+    return (Genre)genre;
 }

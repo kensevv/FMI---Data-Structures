@@ -147,23 +147,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="algorithms.cpp" />
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="Genre.cpp" />
-    <ClCompile Include="GlobalVariables.cpp" />
+    <ClCompile Include="Database.cpp" />
     <ClCompile Include="Playlist.cpp" />
-    <ClCompile Include="Project - Musical Collection.cpp" />
+    <ClCompile Include="Interface.cpp" />
     <ClCompile Include="Song.cpp" />
     <ClCompile Include="User.cpp" />
-    <ClCompile Include="UserInterface.cpp" />
+    <ClCompile Include="UserController.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="algorithms.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="Genre.h" />
-    <ClInclude Include="GlobalVariables.h" />
+    <ClInclude Include="Database.h" />
     <ClInclude Include="Playlist.h" />
     <ClInclude Include="Song.h" />
     <ClInclude Include="User.h" />
-    <ClInclude Include="UserInterface.h" />
+    <ClInclude Include="UserController.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

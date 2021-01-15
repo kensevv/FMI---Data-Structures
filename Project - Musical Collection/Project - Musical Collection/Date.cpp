@@ -1,7 +1,5 @@
 #include "Date.h"
-#include "Date.h"
-#include <iostream>
-#include "String.h"
+#include <string>
 
 Date::Date()
 {
@@ -66,7 +64,8 @@ std::istream& operator>>(std::istream& in, Date& current)
 		_day = 0;
 		std::string date;
 		std::cout << "YY-MM-DD: ";
-		in >> date;
+		
+		std::getline(in, date);
 
 		std::string year, month, day;
 		int index = 0;

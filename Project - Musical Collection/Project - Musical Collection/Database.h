@@ -5,6 +5,7 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
+#include "UserController.h"
 
 extern std::vector<User> Gusers;
 extern std::vector<Playlist> Gplaylists;
@@ -21,3 +22,6 @@ Song* findSongByID(int songID);
 void fileReadPlaylists();
 Playlist* findPlaylistByName(std::string name);
 void fileReadUsers();
+
+void listAllSongs();
+void listAllPlaylists();

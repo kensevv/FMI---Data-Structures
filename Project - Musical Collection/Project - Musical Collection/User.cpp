@@ -120,3 +120,23 @@ std::ostream& operator<<(std::ostream& out, const User& current)
     std::cout << std::endl;
     return out;
 }
+
+std::istream& operator>>(std::istream& in, User& current)
+{
+    std::string input;
+    std::cout << "Username: ";
+    std::getline(std::cin, input);
+    current.setUsername(input);
+
+    std::cout << "Password: ";
+    std::getline(std::cin, input);
+    current.setPassword(input);
+
+    std::cout << "Full Name: ";
+    std::getline(std::cin, input);
+    current.setFullName(input);
+
+    in >> current.birthday;
+
+    return in;
+}

@@ -16,3 +16,4 @@ enum Genre
 	House
 };
 void printGenre(Genre genre);
+Genre genreInput();
