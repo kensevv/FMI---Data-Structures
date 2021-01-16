@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 #include "Database.h"
+#include "algorithms.h"
 
 class UserController
 {
@@ -25,11 +26,13 @@ public:
 	void removeFavGenre(const Genre& genre); 
 	void addFavPlaylist();
 	void removeFavPlaylist();
-	void rateSong(size_t ID, double rating);
+	bool alreadyAdded(Genre genre); // for genre
+	bool alreadyAdded(std::string name); // override for playlist
+	void rateSong();
 	void addSong();
 	void generatePlaylistForUser();
-	void saveCurrentPlaylist(const std::string& name);
-	void loadPlaylistByName(const std::string& name);
+	void saveCurrentPlaylist();
+	void loadPlaylistByName();
 	void sortPlaylist(); // criteria
 
 	void showCurrPlaylistInfo(); // info for songs in current playlist

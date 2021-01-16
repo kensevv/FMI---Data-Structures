@@ -23,7 +23,17 @@ User* UserController::getUser()
 
 void UserController::addFavGenre(const Genre& genre)
 {
-	this->user->addFavGenre(genre);
+	if (!alreadyAdded(genre))
+	{
+		this->user->addFavGenre(genre);
+		printGenre(genre); std::cout << " added to your favorite genres!" << std::endl;
+	}
+	else
+	{
+		std::cout << "You already have ";
+		printGenre(genre);
+		std::cout << " in your favorites!" << std::endl;
+	}
 }
 
 void UserController::removeFavGenre(const Genre& genre)
@@ -38,12 +48,21 @@ void UserController::addFavPlaylist()
 	std::string name;
 	std::cout << "[+]Playlist name: ";
 	std::getline(std::cin, name);
-	for (size_t i = 0; i < Gplaylists.size(); i++)
+
+	if (!alreadyAdded(name))
 	{
-		if (Gplaylists[i].getName() == name)
+		for (size_t i = 0; i < Gplaylists.size(); i++)
 		{
-			this->user->addFavPlaylist(&Gplaylists[i]);
+			if (Gplaylists[i].getName() == name)
+			{
+				this->user->addFavPlaylist(&Gplaylists[i]);
+				std::cout << name << " added to your favorite playlists!" << std::endl;
+			}
 		}
+	}
+	else
+	{
+		std::cout << "You already have " << name << " in your favorites";
 	}
 }
 
@@ -57,12 +76,44 @@ void UserController::removeFavPlaylist()
 		if (Gplaylists[i].getName() == name)
 		{
 			this->user->removeFavPlaylist(&Gplaylists[i]);
+			std::cout << name << " removed from your favorite playlists!" << std::endl;
 		}
 	}
 }
 
-void UserController::rateSong(size_t ID, double rating)
+bool UserController::alreadyAdded(Genre genre)
 {
+	for (size_t i = 0; i < this->user->getFavGenres().size(); i++)
+	{
+		if (this->user->getFavGenres()[i] == genre)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+bool UserController::alreadyAdded(std::string name) // playlist
+{
+	for (size_t i = 0; i < this->user->getPlaylists().size(); i++)
+	{
+		if (this->user->getPlaylists()[i]->getName() == name)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+void UserController::rateSong()
+{
+	listAllSongs(); 
+	std::cout << "Select song to rate by ID: ";
+	std::string input; std::getline(std::cin, input);
+	int ID = validateStringToInt(input);
+	std::cout << "Rating(0-5): ";
+	double rating; std::cin >> rating;
+
 	for (size_t i = 0; i < Gsongs.size(); i++)
 	{
 		if (Gsongs[i].getID() == ID)
@@ -86,28 +137,37 @@ void UserController::generatePlaylistForUser()
 	//TODO
 }
 
-void UserController::saveCurrentPlaylist(const std::string& name)
+void UserController::saveCurrentPlaylist()
 {
+	std::cout << "Save currently loaded playlist by name: ";
+	std::string name;
+	std::getline(std::cin, name);
 	if (this->currentPlaylist == nullptr)
 	{
-		std::cout << "Generate playlist first!" << std::endl;
+		std::cout << "Generate or load playlist first!" << std::endl;
 		return;
 	}
 	
 	this->currentPlaylist->setName(name);
 	Gplaylists.push_back(*this->currentPlaylist);
+	std::cout << "Playlist has been saved!" << std::endl;
 }
 
-void UserController::loadPlaylistByName(const std::string& name)
+void UserController::loadPlaylistByName()
 {
+	std::cout << "Playlist name: ";
+	std::string name; 
+	std::getline(std::cin, name);
 	for (size_t i = 0; i < Gplaylists.size(); i++)
 	{
 		if (Gplaylists[i].getName() == name)
 		{
 			this->currentPlaylist = &Gplaylists[i];
+			std::cout << name << " has been loaded!" << std::endl;
 			return;
 		}
 	}
+	std::cout << "Playlist not found!" << std::endl;
 }
 
 void UserController::sortPlaylist()
@@ -119,6 +179,7 @@ void UserController::sortPlaylist()
 	}
 
 	this->currentPlaylist->sortByAlfOrder();
+	std::cout << "Sorted by alphabetical order!" << std::endl;
 }
 
 void UserController::showCurrPlaylistInfo()
@@ -128,7 +189,6 @@ void UserController::showCurrPlaylistInfo()
 		std::cout << "There is no loaded playlist!" << std::endl;
 		return;
 	}
-
 	std::cout << *this->currentPlaylist;
 }
 

@@ -64,7 +64,14 @@ const double Song::getRating() const
 
 void Song::rateSong(std::string username, double rating)
 {
-    this->ratings.insert(std::pair<std::string, double>(username, rating));
+    if (!usernameHasRated(username))
+    {
+        this->ratings.insert(std::pair<std::string, double>(username, rating));
+    }
+    else
+    {
+        std::cout << "You have already rated that song!" << std::endl;
+    }
 }
 
 bool Song::usernameHasRated(std::string username)
@@ -121,7 +128,7 @@ void Song::setGenre(int genre)
 
 std::ostream& operator<<(std::ostream& out, const Song& current)
 {
-    out << current.singerName << " - " << current.songName << std::endl
+    out << "(ID:" << current.getID() << ") "<< current.singerName << " - " << current.songName << std::endl
         << "Album: " << current.albumName << "; " << "Year: " <<current.yearOfProduction << std::endl
         << "Genre: ";
     printGenre(current.genre);

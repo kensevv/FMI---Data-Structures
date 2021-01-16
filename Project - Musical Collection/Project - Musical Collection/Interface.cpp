@@ -17,7 +17,7 @@
 
 void signInorUp();
 void Menu();
-void outputMenuBars();
+void outputUserOptions();
 void userOptions(std::string str);
 void Register();
 void Login();
@@ -32,15 +32,8 @@ int main()
 	readFiles(); // loads database
 	while (!Exit)
 	{
-		if (userController.getUser() == nullptr)
-		{
-			signInorUp();
-		}
-		else
-		{
-
-			Menu();
-		}
+		if (userController.getUser() == nullptr) signInorUp();
+		else Menu();
 	}
 	writeFiles(); //updates files
 	std::cout << "Database updated succesfully, all changes have been saved!\nExiting . . ." << std::endl;
@@ -73,13 +66,14 @@ void signInorUp()
 
 void Menu()
 {
-	outputMenuBars();
+	outputUserOptions();
 	std::cout << ">";
 	std::string input; std::getline(std::cin, input);
+	clearScreen();
 	userOptions(input);
 }
 
-void outputMenuBars()
+void outputUserOptions()
 {
 	std::cout << "(0) Show profile information " << std::endl
 		<< "(1) List all songs." << std::endl
@@ -125,25 +119,27 @@ void userOptions(std::string str)
 		userController.removeFavPlaylist();
 		break;
 	case 7:
-
+		userController.rateSong();
 		break;
-	case 8:
-
+	case 8: 
+		userController.addSong();
+		std::cout << "Added!" << std::endl;
 		break;
 	case 9:
-
+		//TODO
 		break;
 	case 10:
-
+		userController.saveCurrentPlaylist();
 		break;
 	case 11:
-
+		userController.loadPlaylistByName();
 		break;
 	case 12:
-
+		std::cout << "Currently loaded playlist:" << std::endl;
+		userController.showCurrPlaylistInfo();
 		break;
 	case 13:
-
+		userController.sortPlaylist();
 		break;
 	case 14:
 		userController.logout();
@@ -160,6 +156,7 @@ void Register()
 	User newuser;
 	std::cin >> newuser;
 	Gusers.push_back(newuser);
+	clearScreen();
 	std::cout << "Succesfully registered. Sign in next to continue!" << std::endl;
 }
 
@@ -173,6 +170,7 @@ void Login()
 	std::getline(std::cin, password);
 	if (successfulLogin(username, password))
 	{
+		clearScreen();
 		std::cout << "Welcome " << userController.getUser()->getFullName() << "! You have succesfuly logged in!" << std::endl;
 	}
 	else
