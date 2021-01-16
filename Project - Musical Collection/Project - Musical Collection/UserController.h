@@ -36,6 +36,7 @@ public:
 	void loadPlaylistByName();
 	void addSongToCurrentPlaylist(); // TODO
 	void removeSongFromCurrentPlaylist(); // TODO
+	Song* findSongByID(size_t ID);
 	void sortPlaylist(); // criteria
 
 	void showCurrPlaylistInfo(); // info for songs in current playlist

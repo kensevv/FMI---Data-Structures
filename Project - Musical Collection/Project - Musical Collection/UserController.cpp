@@ -112,8 +112,10 @@ void UserController::rateSong()
 	std::string input; std::getline(std::cin, input);
 	int ID = validateStringToInt(input);
 	std::cout << "Rating(0-5): ";
-	double rating; std::cin >> rating;
-
+	//double rating; std::cin >> rating;
+	std::getline(std::cin, input);
+	double rating = (double)validateStringToInt(input);
+	
 	for (size_t i = 0; i < Gsongs.size(); i++)
 	{
 		if (Gsongs[i].getID() == ID)
@@ -144,15 +146,14 @@ void UserController::generatePlaylistForUser()
 
 void UserController::saveCurrentPlaylist()
 {
-	std::cout << "Save currently loaded playlist by name: ";
-	std::string name;
-	std::getline(std::cin, name);
 	if (this->currentPlaylist == nullptr)
 	{
 		std::cout << "Generate or load playlist first!" << std::endl;
 		return;
 	}
-	
+	std::cout << "Save currently loaded playlist by name: ";
+	std::string name;
+	std::getline(std::cin, name);
 	this->currentPlaylist->setName(name);
 	Gplaylists.push_back(*this->currentPlaylist);
 	std::cout << "Playlist has been saved! You can add it to your favourites!" << std::endl;
@@ -160,6 +161,7 @@ void UserController::saveCurrentPlaylist()
 
 void UserController::loadPlaylistByName()
 {
+	showAllPlaylistsbyName();
 	std::cout << "Playlist name: ";
 	std::string name; 
 	std::getline(std::cin, name);
@@ -177,10 +179,46 @@ void UserController::loadPlaylistByName()
 
 void UserController::addSongToCurrentPlaylist()
 {
+	if (this->currentPlaylist == nullptr)
+	{
+		std::cout << "There is no loaded playlists!" << std::endl;
+		return;
+	}
+	listAllSongs();
+	std::cout << "Select song to ADD to playlist by ID: ";
+	std::string input; std::getline(std::cin, input);
+	int ID = validateStringToInt(input);
+
+	this->currentPlaylist->addSong(findSongByID(ID));
+	std::cout << "Added!" << std::endl;
 }
 
 void UserController::removeSongFromCurrentPlaylist()
 {
+	if (this->currentPlaylist == nullptr)
+	{
+		std::cout << "There is no loaded playlists!" << std::endl;
+		return;
+	}
+	showCurrPlaylistInfo();
+	std::cout << "Select song to remove from playlist by ID: ";
+	std::string input; std::getline(std::cin, input);
+	int ID = validateStringToInt(input);
+
+	this->currentPlaylist->removeSong(findSongByID(ID));
+	std::cout << "Removed!" << std::endl;
+}
+
+Song* UserController::findSongByID(size_t ID)
+{
+	for (size_t i = 0; i < Gsongs.size(); i++)
+	{
+		if (Gsongs[i].getID() == ID)
+		{
+			return &Gsongs[i];
+		}
+	}
+	return nullptr;
 }
 
 void UserController::sortPlaylist()

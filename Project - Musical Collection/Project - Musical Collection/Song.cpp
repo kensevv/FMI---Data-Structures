@@ -67,6 +67,7 @@ void Song::rateSong(std::string username, double rating)
     if (!usernameHasRated(username))
     {
         this->ratings.insert(std::pair<std::string, double>(username, rating));
+        std::cout << "Rated!" << std::endl;
     }
     else
     {

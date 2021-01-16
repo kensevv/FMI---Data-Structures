@@ -75,22 +75,25 @@ void Menu()
 
 void outputUserOptions()
 {
-	std::cout << "(0) Show profile information " << std::endl
-		<< "(1) List all songs." << std::endl
-		<< "(2) List existing playlists." << std::endl
-		<< "(3) [+] favourite genre." << std::endl
-		<< "(4) [-] favourite genre." << std::endl
-		<< "(5) [+] favourite playlist " << std::endl
-		<< "(6) [-] favourite playlist" << std::endl
-		<< "(7) Rate Song" << std::endl
-		<< "(8) Add Song" << std::endl
-		<< "(9) Manually create new playlist" << std::endl
-		<< "(10) Generate playlist by criterias" << std::endl
-		<< "(11) Save current playlist" << std::endl
-		<< "(12) Load playlist" << std::endl
-		<< "(13) Show current playlist information" << std::endl
-		<< "(14) Sort playlist" << std::endl
-		<< "(15) Logout." << std::endl;
+	int i = 17; // for easy adding
+	std::cout << "(" << i << ") Show profile information " << std::endl
+		<< "(" << i-- << ") List all songs." << std::endl
+		<< "(" << i-- << ") List existing playlists." << std::endl
+		<< "(" << i-- << ") [+] favourite genre." << std::endl
+		<< "(" << i-- << ") [-] favourite genre." << std::endl
+		<< "(" << i-- << ") [+] favourite playlist " << std::endl
+		<< "(" << i-- << ") [-] favourite playlist" << std::endl
+		<< "(" << i-- << ") Rate Song" << std::endl
+		<< "(" << i-- << ") Add Song" << std::endl
+		<< "(" << i-- << ") Manually create new playlist" << std::endl
+		<< "(" << i-- << ") Generate playlist by criterias" << std::endl
+		<< "(" << i-- << ") Save current playlist" << std::endl
+		<< "(" << i-- << ") Load playlist" << std::endl
+		<< "(" << i-- << ") Show current playlist information" << std::endl
+		<< "(" << i-- << ") Sort playlist" << std::endl
+		<< "(" << i-- << ") [+]Add song to current playlist" << std::endl
+		<< "(" << i-- << ") [-]Remove song from current playlist" << std::endl
+		<< "(" << i-- << ") Logout." << std::endl;
 }
 
 void userOptions(std::string str)
@@ -127,10 +130,10 @@ void userOptions(std::string str)
 		std::cout << "Added!" << std::endl;
 		break;
 	case 9:
-		//TODO
+		userController.createPlaylist();
 		break;
 	case 10:
-		//TODO
+		userController.generatePlaylistForUser();
 		break;
 	case 11:
 		userController.saveCurrentPlaylist();
@@ -146,6 +149,12 @@ void userOptions(std::string str)
 		userController.sortPlaylist();
 		break;
 	case 15:
+		userController.addSongToCurrentPlaylist();
+		break;
+	case 16:
+		userController.removeSongFromCurrentPlaylist();
+		break;
+	case 17:
 		userController.logout();
 		std::cout << "Logged out!" << std::endl;
 		break;
