@@ -30,9 +30,12 @@ public:
 	bool alreadyAdded(std::string name); // override for playlist
 	void rateSong();
 	void addSong();
+	void createPlaylist();
 	void generatePlaylistForUser();
 	void saveCurrentPlaylist();
 	void loadPlaylistByName();
+	void addSongToCurrentPlaylist(); // TODO
+	void removeSongFromCurrentPlaylist(); // TODO
 	void sortPlaylist(); // criteria
 
 	void showCurrPlaylistInfo(); // info for songs in current playlist

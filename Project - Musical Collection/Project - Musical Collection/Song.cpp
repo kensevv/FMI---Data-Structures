@@ -156,10 +156,8 @@ std::istream& operator>>(std::istream& in, Song& current)
 
     std::cout << "Year of production: ";
     in >> current.yearOfProduction;
-    std::cout << "Genre: ";
-    int genre;
-    in >> genre;
-    current.setGenre(genre);
+    in.get();
+    current.setGenre(genreInput());
 
     return in;
 }

@@ -132,6 +132,11 @@ void UserController::addSong()
 	Gsongs.push_back(newSong);
 }
 
+void UserController::createPlaylist()
+{
+
+}
+
 void UserController::generatePlaylistForUser()
 {
 	//TODO
@@ -150,7 +155,7 @@ void UserController::saveCurrentPlaylist()
 	
 	this->currentPlaylist->setName(name);
 	Gplaylists.push_back(*this->currentPlaylist);
-	std::cout << "Playlist has been saved!" << std::endl;
+	std::cout << "Playlist has been saved! You can add it to your favourites!" << std::endl;
 }
 
 void UserController::loadPlaylistByName()
@@ -168,6 +173,14 @@ void UserController::loadPlaylistByName()
 		}
 	}
 	std::cout << "Playlist not found!" << std::endl;
+}
+
+void UserController::addSongToCurrentPlaylist()
+{
+}
+
+void UserController::removeSongFromCurrentPlaylist()
+{
 }
 
 void UserController::sortPlaylist()

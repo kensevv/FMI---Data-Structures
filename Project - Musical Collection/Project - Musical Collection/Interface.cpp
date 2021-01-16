@@ -41,7 +41,7 @@ int main()
 
 void signInorUp()
 {
-	std::cout << "Input Exit to exit" << std::endl
+	std::cout << "Input Exit to exit and SAVE!" << std::endl
 		<< "Login or Register to continue." << std::endl
 		<< ">";
 	std::string input;
@@ -84,12 +84,13 @@ void outputUserOptions()
 		<< "(6) [-] favourite playlist" << std::endl
 		<< "(7) Rate Song" << std::endl
 		<< "(8) Add Song" << std::endl
-		<< "(9) Generate playlist" << std::endl
-		<< "(10) Save current playlist" << std::endl
-		<< "(11) Load playlist" << std::endl
-		<< "(12) Show current playlist information" << std::endl
-		<< "(13) Sort playlist" << std::endl
-		<< "(14) Logout." << std::endl;
+		<< "(9) Manually create new playlist" << std::endl
+		<< "(10) Generate playlist by criterias" << std::endl
+		<< "(11) Save current playlist" << std::endl
+		<< "(12) Load playlist" << std::endl
+		<< "(13) Show current playlist information" << std::endl
+		<< "(14) Sort playlist" << std::endl
+		<< "(15) Logout." << std::endl;
 }
 
 void userOptions(std::string str)
@@ -129,19 +130,22 @@ void userOptions(std::string str)
 		//TODO
 		break;
 	case 10:
-		userController.saveCurrentPlaylist();
+		//TODO
 		break;
 	case 11:
-		userController.loadPlaylistByName();
+		userController.saveCurrentPlaylist();
 		break;
 	case 12:
+		userController.loadPlaylistByName();
+		break;
+	case 13:
 		std::cout << "Currently loaded playlist:" << std::endl;
 		userController.showCurrPlaylistInfo();
 		break;
-	case 13:
+	case 14:
 		userController.sortPlaylist();
 		break;
-	case 14:
+	case 15:
 		userController.logout();
 		std::cout << "Logged out!" << std::endl;
 		break;
