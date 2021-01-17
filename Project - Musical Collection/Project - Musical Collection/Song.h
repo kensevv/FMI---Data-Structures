@@ -29,7 +29,7 @@ public:
 	const size_t getYearOfProduction() const;
 	Genre getGenre() const;
 	
-	const double getRating() const;
+	double getRating() const;
 	void rateSong(std::string username, double rating);
 	bool usernameHasRated(std::string username);
 

@@ -32,12 +32,16 @@ public:
 	void addSong();
 	void createPlaylist();
 	void generatePlaylistForUser();
-	void saveCurrentPlaylist();
+	//helpers for generating playlist for user
+	void generatePlaylistByCriterias(std::vector<Song*>& fittingSongs,int size, int rating,std::vector<Genre>& genres,int yearPref);
+	void filterGenres(std::vector<Genre>& genres);
+
 	void loadPlaylistByName();
 	void addSongToCurrentPlaylist(); // TODO
 	void removeSongFromCurrentPlaylist(); // TODO
 	Song* findSongByID(size_t ID);
 	void sortPlaylist(); // criteria
+	void deleteCurrentPlaylist();
 
 	void showCurrPlaylistInfo(); // info for songs in current playlist
 	void showAllPlaylistsbyName();

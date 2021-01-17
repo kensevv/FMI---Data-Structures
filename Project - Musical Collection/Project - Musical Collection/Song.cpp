@@ -52,8 +52,12 @@ Genre Song::getGenre() const
     return this->genre;
 }
 
-const double Song::getRating() const
+double Song::getRating() const
 {
+    if (ratings.empty())
+    {
+        return 0;
+    }
     double sumRatings = 0;
     for (const auto& it : this->ratings)
     {

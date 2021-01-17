@@ -87,12 +87,12 @@ void outputUserOptions()
 		<< "(" << i-- << ") Add Song" << std::endl
 		<< "(" << i-- << ") Manually create new playlist" << std::endl
 		<< "(" << i-- << ") Generate playlist by criterias" << std::endl
-		<< "(" << i-- << ") Save current playlist" << std::endl
 		<< "(" << i-- << ") Load playlist" << std::endl
 		<< "(" << i-- << ") Show current playlist information" << std::endl
 		<< "(" << i-- << ") Sort playlist" << std::endl
 		<< "(" << i-- << ") [+]Add song to current playlist" << std::endl
 		<< "(" << i-- << ") [-]Remove song from current playlist" << std::endl
+		<< "(" << i-- << ") DELETE current playlist" << std::endl
 		<< "(" << i-- << ") Logout." << std::endl;
 }
 
@@ -136,23 +136,23 @@ void userOptions(std::string str)
 		userController.generatePlaylistForUser();
 		break;
 	case 11:
-		userController.saveCurrentPlaylist();
-		break;
-	case 12:
 		userController.loadPlaylistByName();
 		break;
-	case 13:
+	case 12:
 		std::cout << "Currently loaded playlist:" << std::endl;
 		userController.showCurrPlaylistInfo();
 		break;
-	case 14:
+	case 13:
 		userController.sortPlaylist();
 		break;
-	case 15:
+	case 14:
 		userController.addSongToCurrentPlaylist();
 		break;
-	case 16:
+	case 15:
 		userController.removeSongFromCurrentPlaylist();
+		break;
+	case 16:
+		userController.deleteCurrentPlaylist();
 		break;
 	case 17:
 		userController.logout();
