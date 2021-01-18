@@ -5,6 +5,7 @@ User::User()
     this->username = "Default username";
     this->password = "Default password";
     this->fullName = "Default name";
+    this->playlists.reserve(10);
 }
 
 User::User(const std::string& username, const std::string& password, const std::string& fullName, const Date& birthday)

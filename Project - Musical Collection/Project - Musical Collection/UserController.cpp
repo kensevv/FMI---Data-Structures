@@ -53,7 +53,7 @@ void UserController::addFavPlaylist()
 	{
 		for (size_t i = 0; i < Gplaylists.size(); i++)
 		{
-			if (Gplaylists[i].getName() == name)
+			if (toLower(Gplaylists[i].getName()) == toLower(name))
 			{
 				this->user->addFavPlaylist(&Gplaylists[i]);
 				std::cout << name << " added to your favorite playlists!" << std::endl;
@@ -68,12 +68,13 @@ void UserController::addFavPlaylist()
 
 void UserController::removeFavPlaylist()
 {
+	showAllPlaylistsbyName();
 	std::string name;
 	std::cout << "[-]Playlist name: ";
 	std::getline(std::cin, name);
 	for (size_t i = 0; i < Gplaylists.size(); i++)
 	{
-		if (Gplaylists[i].getName() == name)
+		if (toLower(Gplaylists[i].getName()) == toLower(name))
 		{
 			this->user->removeFavPlaylist(&Gplaylists[i]);
 			std::cout << name << " removed from your favorite playlists!" << std::endl;
@@ -138,7 +139,7 @@ void UserController::createPlaylist()
 {
 	std::cout << "Create new Playlist by name: ";
  	std::string name; std::getline(std::cin, name);
-	Playlist newPlaylist; 
+	Playlist newPlaylist;
 	newPlaylist.setName(name);
 	Gplaylists.push_back(newPlaylist);
 	this->currentPlaylist = &Gplaylists[Gplaylists.size()-1];
@@ -331,6 +332,18 @@ void UserController::sortPlaylist()
 
 	this->currentPlaylist->sortByAlfOrder();
 	std::cout << "Sorted by alphabetical order!" << std::endl;
+}
+
+void UserController::renameCurrentPlaylist()
+{
+	if (this->currentPlaylist == nullptr)
+	{
+		std::cout << "There is no loaded playlists!" << std::endl;
+		return;
+	}
+	std::string newName; std::getline(std::cin, newName);
+	this->currentPlaylist->setName(newName);
+	std::cout << "Renamed!" << std::endl;
 }
 
 void UserController::deleteCurrentPlaylist()

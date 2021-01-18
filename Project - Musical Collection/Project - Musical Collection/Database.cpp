@@ -97,6 +97,7 @@ void readFiles()
 }
 void fileReadSongs()
 {
+	Gsongs.reserve(50); // bug fix for memory location change when resizing capacity of vector
 	std::ifstream input("songs.txt");
 	if (input.is_open())
 	{
@@ -158,6 +159,7 @@ Song* findSongByID(int songID)
 
 void fileReadPlaylists()
 {
+	Gplaylists.reserve(20); // bug fix for memory location change when resizing capacity of vector
 	std::ifstream input("playlists.txt");
 	if (input.is_open())
 	{
@@ -196,6 +198,7 @@ Playlist* findPlaylistByName(std::string name)
 
 void fileReadUsers()
 {
+	Gusers.reserve(20); // bug fix for memory location change when resizing capacity of vector
 	std::ifstream input("users.txt");
 	if (input.is_open())
 	{

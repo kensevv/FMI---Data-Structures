@@ -41,6 +41,7 @@ public:
 	void removeSongFromCurrentPlaylist(); // TODO
 	Song* findSongByID(size_t ID);
 	void sortPlaylist(); // criteria
+	void renameCurrentPlaylist();
 	void deleteCurrentPlaylist();
 
 	void showCurrPlaylistInfo(); // info for songs in current playlist

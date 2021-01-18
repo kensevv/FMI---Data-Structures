@@ -75,7 +75,7 @@ void Menu()
 
 void outputUserOptions()
 {
-	int i = 17; // for easy adding
+	int i = 18; // for easy adding
 	std::cout << "(" << i << ") Show profile information " << std::endl
 		<< "(" << i-- << ") List all songs." << std::endl
 		<< "(" << i-- << ") List existing playlists." << std::endl
@@ -92,6 +92,7 @@ void outputUserOptions()
 		<< "(" << i-- << ") Sort playlist" << std::endl
 		<< "(" << i-- << ") [+]Add song to current playlist" << std::endl
 		<< "(" << i-- << ") [-]Remove song from current playlist" << std::endl
+		<< "(" << i-- << ") Rename current playlist" << std::endl
 		<< "(" << i-- << ") DELETE current playlist" << std::endl
 		<< "(" << i-- << ") Logout." << std::endl;
 }
@@ -152,9 +153,12 @@ void userOptions(std::string str)
 		userController.removeSongFromCurrentPlaylist();
 		break;
 	case 16:
-		userController.deleteCurrentPlaylist();
+		userController.renameCurrentPlaylist();
 		break;
 	case 17:
+		userController.deleteCurrentPlaylist();
+		break;
+	case 18:
 		userController.logout();
 		std::cout << "Logged out!" << std::endl;
 		break;
