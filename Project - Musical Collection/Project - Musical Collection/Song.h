@@ -15,27 +15,25 @@ private:
 	std::string albumName;
 	size_t yearOfProduction;
 	Genre genre;
-
 	std::map<std::string, double> ratings; // map that contains the Username of the user who has rated and the rating given by him.
+
 public:
 	static size_t nextID;
 	Song();
 	Song(const std::string& songName, const std::string& singerName, const std::string& albumName, size_t yearOfProduction, const Genre& genre, const std::map<std::string, double>& ratings);
 	
+	double getRating() const;
+	void rateSong(std::string username, double rating);
+
+	//setters and getters
 	const size_t getID() const;
 	const std::string& getSongName() const;
 	const std::string& getSingerName() const;
 	const std::string& getAlbumName() const;
 	const size_t getYearOfProduction() const;
 	Genre getGenre() const;
-	
-	double getRating() const;
-	void rateSong(std::string username, double rating);
-	bool usernameHasRated(std::string username);
-
 	std::map<std::string, double>& getMAPratings();
 
-	//setters
 	void setID(size_t ID);
 	void setSongName(const std::string& songName);
 	void setSingerName(const std::string& singerName);
@@ -45,5 +43,7 @@ public:
 	void setGenre(int genre);
 
 	friend std::ostream& operator<<(std::ostream& out, const Song& current);
-	friend std::istream& operator>>(std::istream& in, Song& current);
+	friend std::istream& operator>>(std::istream& in, Song& current);	
+private:
+	bool usernameHasRated(std::string username);
 };
