@@ -1,3 +1,4 @@
+
 #include "User.h"
 
 User::User()
@@ -6,14 +7,6 @@ User::User()
     this->password = "Default password";
     this->fullName = "Default name";
     this->playlists.reserve(10);
-}
-
-User::User(const std::string& username, const std::string& password, const std::string& fullName, const Date& birthday)
-{
-    this->username = username;
-    this->password = password;
-    this->fullName = fullName;
-    this->birthday = birthday;
 }
 
 void User::setUsername(const std::string& username)

@@ -15,5 +15,6 @@ enum Genre
 	Techno,
 	House
 };
-void printGenre(Genre genre);
+
+void printGenre(Genre genre); 
 Genre genreInput();

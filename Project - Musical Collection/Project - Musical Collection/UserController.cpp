@@ -6,11 +6,6 @@ UserController::UserController()
 	this->currentPlaylist = nullptr;
 }
 
-UserController::UserController(User* user)
-{
-	this->user = user;
-}
-
 void UserController::setUser(User* user)
 {
 	this->user = user;

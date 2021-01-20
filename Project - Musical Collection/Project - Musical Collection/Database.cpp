@@ -1,5 +1,5 @@
 #include "Database.h"
-
+// declaring the extern (global) variables.
 std::vector<User> Gusers;
 std::vector<Playlist> Gplaylists;
 std::vector<Song> Gsongs;

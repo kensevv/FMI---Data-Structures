@@ -9,7 +9,8 @@ class Song
 protected:
 	
 private:
-	size_t ID; // used to direct pointers in playlists when loaded from files.
+	static size_t nextID; // Used to generate the Unique ID. 
+	size_t ID; // unique identified. Used to direct pointers in playlists or as selector.
 	std::string songName;
 	std::string singerName;
 	std::string albumName;
@@ -18,12 +19,10 @@ private:
 	std::map<std::string, double> ratings; // map that contains the Username of the user who has rated and the rating given by him.
 
 public:
-	static size_t nextID;
 	Song();
-	Song(const std::string& songName, const std::string& singerName, const std::string& albumName, size_t yearOfProduction, const Genre& genre, const std::map<std::string, double>& ratings);
-	
-	double getRating() const;
-	void rateSong(std::string username, double rating);
+
+	double getRating() const; // calculates the average rating.
+	void rateSong(std::string username, double rating); // rates the song: each user can vote only once.
 
 	//setters and getters
 	const size_t getID() const;
@@ -45,5 +44,5 @@ public:
 	friend std::ostream& operator<<(std::ostream& out, const Song& current);
 	friend std::istream& operator>>(std::istream& in, Song& current);	
 private:
-	bool usernameHasRated(std::string username);
+	bool usernameHasRated(std::string username); // checks if given user has already rated this song.
 };

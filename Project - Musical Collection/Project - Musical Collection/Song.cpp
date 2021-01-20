@@ -12,16 +12,6 @@ Song::Song()
     this->genre = defaultGenre;
 }
 
-Song::Song(const std::string& songName, const std::string& singerName, const std::string& albumName, size_t yearOfProduction, const Genre& genre, const std::map<std::string, double>& ratings)
-{
-    this->songName = songName;
-    this->singerName = singerName;
-    this->albumName = albumName;
-    this->yearOfProduction = yearOfProduction;
-    this->genre = genre;
-    this->ratings = ratings;
-}
-
 const std::string& Song::getSongName() const
 {
     return this->songName;
@@ -54,21 +44,21 @@ Genre Song::getGenre() const
 
 double Song::getRating() const
 {
-    if (ratings.empty())
+    if (ratings.empty()) // Non-rated.
     {
-        return 0;
+        return 0; 
     }
     double sumRatings = 0;
     for (const auto& it : this->ratings)
     {
         sumRatings += it.second;
     }
-    return sumRatings / this->ratings.size();
+    return sumRatings / this->ratings.size(); // average rating.
 }
 
 void Song::rateSong(std::string username, double rating)
 {
-    if (!usernameHasRated(username))
+    if (!usernameHasRated(username)) // if user hasnt already rated.
     {
         this->ratings.insert(std::pair<std::string, double>(username, rating));
         std::cout << "Rated!" << std::endl;
@@ -162,7 +152,7 @@ std::istream& operator>>(std::istream& in, Song& current)
     std::cout << "Year of production: ";
     in >> current.yearOfProduction;
     in.get();
-    current.setGenre(genreInput());
+    current.setGenre(genreInput()); // genreInput() - method from Genre.h used to input genre from interface.
 
     return in;
 }

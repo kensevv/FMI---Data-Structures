@@ -15,7 +15,7 @@
 #include "Database.h"
 #include "algorithms.h"
 
-void signInorUp();
+void signInorUp(); 
 void Menu();
 void outputUserOptions();
 void userOptions(std::string str);
@@ -32,7 +32,7 @@ int main()
 	readFiles(); // loads database
 	while (!Exit)
 	{
-		if (userController.getUser() == nullptr) signInorUp();
+		if (userController.getUser() == nullptr) signInorUp(); // 
 		else Menu();
 	}
 	writeFiles(); //updates files

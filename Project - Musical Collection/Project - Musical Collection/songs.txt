@@ -96,7 +96,11 @@ Krisko
 Single
 2019
 1
-0
+2
+Kensev
+5
+Test
+2
 15
 Sen Trope
 Azis

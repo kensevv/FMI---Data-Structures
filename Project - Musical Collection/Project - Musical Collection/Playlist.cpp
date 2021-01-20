@@ -6,12 +6,6 @@ Playlist::Playlist()
 	this->name = "Default Name";
 }
 
-Playlist::Playlist(std::string name, std::vector<Song*> songs)
-{
-	this->name = name;
-	this->songs = songs;
-}
-
 std::vector<Song*>& Playlist::getSongs()
 {
 	return this->songs;

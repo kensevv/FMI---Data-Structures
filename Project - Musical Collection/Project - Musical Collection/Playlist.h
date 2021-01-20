@@ -10,18 +10,16 @@ private:
 	std::vector<Song*> songs;
 
 public:
-	Playlist();
-	Playlist(std::string name, std::vector<Song*> songs);
-	
-	std::vector<Song*>& getSongs();
-
+	Playlist(); // default initialization
+	//setters and getters
 	void setName(const std::string& name);
+	std::vector<Song*>& getSongs();
 	const std::string& getName() const;
 	
-	void addSong(Song* song);
-	void removeSong(Song* song);
+	void addSong(Song* song); // adds song by reference to the vector
+	void removeSong(Song* song); 
 
-	void sortByAlfOrder();
+	void sortByAlfOrder(); // sorts the playlist by alphabetical order.
 
-	friend std::ostream& operator<<(std::ostream& out, const Playlist& current);
+	friend std::ostream& operator<<(std::ostream& out, const Playlist& current); // output playlist to console
 };
