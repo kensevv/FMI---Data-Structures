@@ -1,0 +1,129 @@
+\hypertarget{class_playlist}{}\doxysection{Playlist Class Reference}
+\label{class_playlist}\index{Playlist@{Playlist}}
+
+
+{\ttfamily \#include $<$Playlist.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_playlist_aef38d55e42995be147977726350f3ada}{Playlist}} ()
+\begin{DoxyCompactList}\small\item\em default initialization \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_playlist_a40cbb4ad8d4d839e7e1e9b22159e103d}{set\+Name}} (const std\+::string \&\mbox{\hyperlink{class_playlist_a6b06305db2f4b7bfadccd994665501cf}{name}})
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_song}{Song}} $\ast$ $>$ \& \mbox{\hyperlink{class_playlist_a7d5bdf9fa5268ba3cc0d78a238f4d3f2}{get\+Songs}} ()
+\item 
+const std\+::string \& \mbox{\hyperlink{class_playlist_a6aeb5b1301c9f076f8b5df393b29a2cc}{get\+Name}} () const
+\item 
+void \mbox{\hyperlink{class_playlist_a7bd89a3cf5da6f67ad2a2eff6c56aaa8}{add\+Song}} (\mbox{\hyperlink{class_song}{Song}} $\ast$song)
+\begin{DoxyCompactList}\small\item\em adds song by reference to the vector \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_playlist_a5c1cb63be0e4ee3bb2b45f2f11e72cfa}{remove\+Song}} (\mbox{\hyperlink{class_song}{Song}} $\ast$song)
+\item 
+void \mbox{\hyperlink{class_playlist_ad0430c18e851a57447f7aab322f1b7d9}{sort\+By\+Alf\+Order}} ()
+\begin{DoxyCompactList}\small\item\em sorts the playlist by alphabetical order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_playlist_a6b06305db2f4b7bfadccd994665501cf}{name}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_song}{Song}} $\ast$ $>$ \mbox{\hyperlink{class_playlist_ab6105a0cba6a56bf06542c1ed49902ba}{songs}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_playlist_a63d8734b9f68a318167cacccdfa63e23}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{class_playlist}{Playlist}} \&current)
+\begin{DoxyCompactList}\small\item\em output playlist to console \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_playlist_aef38d55e42995be147977726350f3ada}\label{class_playlist_aef38d55e42995be147977726350f3ada}} 
+\index{Playlist@{Playlist}!Playlist@{Playlist}}
+\index{Playlist@{Playlist}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{Playlist()}{Playlist()}}
+{\footnotesize\ttfamily Playlist\+::\+Playlist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default initialization 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_playlist_a7bd89a3cf5da6f67ad2a2eff6c56aaa8}\label{class_playlist_a7bd89a3cf5da6f67ad2a2eff6c56aaa8}} 
+\index{Playlist@{Playlist}!addSong@{addSong}}
+\index{addSong@{addSong}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{addSong()}{addSong()}}
+{\footnotesize\ttfamily void Playlist\+::add\+Song (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_song}{Song}} $\ast$}]{song }\end{DoxyParamCaption})}
+
+
+
+adds song by reference to the vector 
+
+\mbox{\Hypertarget{class_playlist_a6aeb5b1301c9f076f8b5df393b29a2cc}\label{class_playlist_a6aeb5b1301c9f076f8b5df393b29a2cc}} 
+\index{Playlist@{Playlist}!getName@{getName}}
+\index{getName@{getName}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily const std\+::string \& Playlist\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_playlist_a7d5bdf9fa5268ba3cc0d78a238f4d3f2}\label{class_playlist_a7d5bdf9fa5268ba3cc0d78a238f4d3f2}} 
+\index{Playlist@{Playlist}!getSongs@{getSongs}}
+\index{getSongs@{getSongs}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{getSongs()}{getSongs()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_song}{Song}} $\ast$ $>$ \& Playlist\+::get\+Songs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_playlist_a5c1cb63be0e4ee3bb2b45f2f11e72cfa}\label{class_playlist_a5c1cb63be0e4ee3bb2b45f2f11e72cfa}} 
+\index{Playlist@{Playlist}!removeSong@{removeSong}}
+\index{removeSong@{removeSong}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{removeSong()}{removeSong()}}
+{\footnotesize\ttfamily void Playlist\+::remove\+Song (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_song}{Song}} $\ast$}]{song }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_playlist_a40cbb4ad8d4d839e7e1e9b22159e103d}\label{class_playlist_a40cbb4ad8d4d839e7e1e9b22159e103d}} 
+\index{Playlist@{Playlist}!setName@{setName}}
+\index{setName@{setName}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Playlist\+::set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_playlist_ad0430c18e851a57447f7aab322f1b7d9}\label{class_playlist_ad0430c18e851a57447f7aab322f1b7d9}} 
+\index{Playlist@{Playlist}!sortByAlfOrder@{sortByAlfOrder}}
+\index{sortByAlfOrder@{sortByAlfOrder}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{sortByAlfOrder()}{sortByAlfOrder()}}
+{\footnotesize\ttfamily void Playlist\+::sort\+By\+Alf\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+sorts the playlist by alphabetical order. 
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_playlist_a63d8734b9f68a318167cacccdfa63e23}\label{class_playlist_a63d8734b9f68a318167cacccdfa63e23}} 
+\index{Playlist@{Playlist}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \mbox{\hyperlink{class_playlist}{Playlist}} \&}]{current }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+output playlist to console 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_playlist_a6b06305db2f4b7bfadccd994665501cf}\label{class_playlist_a6b06305db2f4b7bfadccd994665501cf}} 
+\index{Playlist@{Playlist}!name@{name}}
+\index{name@{name}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string Playlist\+::name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_playlist_ab6105a0cba6a56bf06542c1ed49902ba}\label{class_playlist_ab6105a0cba6a56bf06542c1ed49902ba}} 
+\index{Playlist@{Playlist}!songs@{songs}}
+\index{songs@{songs}!Playlist@{Playlist}}
+\doxysubsubsection{\texorpdfstring{songs}{songs}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_song}{Song}}$\ast$$>$ Playlist\+::songs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Programming/\+Data Structures/\+Project -\/ Musical Collection/\+Project -\/ Musical Collection/\mbox{\hyperlink{_playlist_8h}{Playlist.\+h}}\item 
+D\+:/\+Programming/\+Data Structures/\+Project -\/ Musical Collection/\+Project -\/ Musical Collection/\mbox{\hyperlink{_playlist_8cpp}{Playlist.\+cpp}}\end{DoxyCompactItemize}

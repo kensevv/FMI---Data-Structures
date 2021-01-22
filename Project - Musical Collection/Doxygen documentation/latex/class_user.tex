@@ -1,0 +1,241 @@
+\hypertarget{class_user}{}\doxysection{User Class Reference}
+\label{class_user}\index{User@{User}}
+
+
+{\ttfamily \#include $<$User.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user_a4a0137053e591fbb79d9057dd7d2283d}{User}} ()
+\begin{DoxyCompactList}\small\item\em default initialization. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_a7abee4d4937156ba0c1a657b9b84ddef}{set\+Username}} (const std\+::string \&\mbox{\hyperlink{class_user_aacbb807e514280f69e00bec7d71f3aee}{username}})
+\item 
+void \mbox{\hyperlink{class_user_a4c0be2061d0bb5bbf80ac0a4fdde16ff}{set\+Password}} (const std\+::string \&\mbox{\hyperlink{class_user_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{password}})
+\item 
+void \mbox{\hyperlink{class_user_aa0c81c44860c62c879d5cdde1b12ecdb}{set\+Full\+Name}} (const std\+::string \&\mbox{\hyperlink{class_user_a0cf4d35683a5bbfb232721eb5877690d}{full\+Name}})
+\item 
+void \mbox{\hyperlink{class_user_a4b3a6912221e0acb2238db0656d42cd1}{set\+Birthday}} (const \mbox{\hyperlink{struct_date}{Date}} \&\mbox{\hyperlink{class_user_a5a97b51f09ee036664303016ce2fc72f}{birthday}})
+\item 
+const std\+::string \& \mbox{\hyperlink{class_user_a0bdca63ed72fc8ffcee690a0119c2104}{get\+Username}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{class_user_aee6af833e24993ff1056538c2c34e99c}{get\+Password}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{class_user_af419a6c69cf6a59266c08a5844ecc4e4}{get\+Full\+Name}} () const
+\item 
+const \mbox{\hyperlink{struct_date}{Date}} \& \mbox{\hyperlink{class_user_a2142a54a77d434653c6b2e50ce1f0eea}{get\+Birthday}} () const
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{_genre_8h_a5cd9403a8971f75311aa139040d38bbd}{Genre}} $>$ \& \mbox{\hyperlink{class_user_ab44e9fd7b1007927b8fc5e029f561aa6}{get\+Fav\+Genres}} () const
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{class_playlist}{Playlist}} $\ast$ $>$ \& \mbox{\hyperlink{class_user_a867c46c99e36514018d8e1f0eab6893e}{get\+Playlists}} () const
+\item 
+bool \mbox{\hyperlink{class_user_a4000a29e78a75a1174995260e007f0cd}{login}} (const std\+::string \&\mbox{\hyperlink{class_user_aacbb807e514280f69e00bec7d71f3aee}{username}}, const std\+::string \&\mbox{\hyperlink{class_user_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{password}})
+\begin{DoxyCompactList}\small\item\em used in the controller to login. Checks if the username and password are correct for the exact instance of the class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_ae26fb87ed6ad716768cfde6d3fef1814}{add\+Fav\+Genre}} (const \mbox{\hyperlink{_genre_8h_a5cd9403a8971f75311aa139040d38bbd}{Genre}} \&genre)
+\begin{DoxyCompactList}\small\item\em adds a favourite Genre \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_a2c8286289d4e54e56d2e68c392917f3f}{add\+Fav\+Playlist}} (\mbox{\hyperlink{class_playlist}{Playlist}} $\ast$playlist)
+\begin{DoxyCompactList}\small\item\em adds a pointer to playlist. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_a330ce3c74293488f5773eb1eb9bfb005}{remove\+Fav\+Genre}} (const \mbox{\hyperlink{_genre_8h_a5cd9403a8971f75311aa139040d38bbd}{Genre}} \&genre)
+\item 
+void \mbox{\hyperlink{class_user_ad74904784d887471d5626762114fffec}{remove\+Fav\+Playlist}} (\mbox{\hyperlink{class_playlist}{Playlist}} $\ast$playlist)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_user_aacbb807e514280f69e00bec7d71f3aee}{username}}
+\item 
+std\+::string \mbox{\hyperlink{class_user_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{password}}
+\item 
+std\+::string \mbox{\hyperlink{class_user_a0cf4d35683a5bbfb232721eb5877690d}{full\+Name}}
+\item 
+\mbox{\hyperlink{struct_date}{Date}} \mbox{\hyperlink{class_user_a5a97b51f09ee036664303016ce2fc72f}{birthday}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{_genre_8h_a5cd9403a8971f75311aa139040d38bbd}{Genre}} $>$ \mbox{\hyperlink{class_user_a69d047f2a01f6c617ca2b4b6f2b1b715}{fav\+Genres}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_playlist}{Playlist}} $\ast$ $>$ \mbox{\hyperlink{class_user_aa4f5ac605b23c2b7c27c224983c706ef}{playlists}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_user_ac78d47f233f75c24b5c8f51e3884a1ad}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{class_user}{User}} \&current)
+\item 
+std\+::istream \& \mbox{\hyperlink{class_user_a9f2da29843e33df09d9256fadc593c55}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{class_user}{User}} \&current)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_user_a4a0137053e591fbb79d9057dd7d2283d}\label{class_user_a4a0137053e591fbb79d9057dd7d2283d}} 
+\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\doxysubsubsection{\texorpdfstring{User()}{User()}}
+{\footnotesize\ttfamily User\+::\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+default initialization. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_user_ae26fb87ed6ad716768cfde6d3fef1814}\label{class_user_ae26fb87ed6ad716768cfde6d3fef1814}} 
+\index{User@{User}!addFavGenre@{addFavGenre}}
+\index{addFavGenre@{addFavGenre}!User@{User}}
+\doxysubsubsection{\texorpdfstring{addFavGenre()}{addFavGenre()}}
+{\footnotesize\ttfamily void User\+::add\+Fav\+Genre (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_genre_8h_a5cd9403a8971f75311aa139040d38bbd}{Genre}} \&}]{genre }\end{DoxyParamCaption})}
+
+
+
+adds a favourite Genre 
+
+\mbox{\Hypertarget{class_user_a2c8286289d4e54e56d2e68c392917f3f}\label{class_user_a2c8286289d4e54e56d2e68c392917f3f}} 
+\index{User@{User}!addFavPlaylist@{addFavPlaylist}}
+\index{addFavPlaylist@{addFavPlaylist}!User@{User}}
+\doxysubsubsection{\texorpdfstring{addFavPlaylist()}{addFavPlaylist()}}
+{\footnotesize\ttfamily void User\+::add\+Fav\+Playlist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_playlist}{Playlist}} $\ast$}]{playlist }\end{DoxyParamCaption})}
+
+
+
+adds a pointer to playlist. 
+
+\mbox{\Hypertarget{class_user_a2142a54a77d434653c6b2e50ce1f0eea}\label{class_user_a2142a54a77d434653c6b2e50ce1f0eea}} 
+\index{User@{User}!getBirthday@{getBirthday}}
+\index{getBirthday@{getBirthday}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getBirthday()}{getBirthday()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_date}{Date}} \& User\+::get\+Birthday (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_user_ab44e9fd7b1007927b8fc5e029f561aa6}\label{class_user_ab44e9fd7b1007927b8fc5e029f561aa6}} 
+\index{User@{User}!getFavGenres@{getFavGenres}}
+\index{getFavGenres@{getFavGenres}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getFavGenres()}{getFavGenres()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{_genre_8h_a5cd9403a8971f75311aa139040d38bbd}{Genre}} $>$ \& User\+::get\+Fav\+Genres (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_user_af419a6c69cf6a59266c08a5844ecc4e4}\label{class_user_af419a6c69cf6a59266c08a5844ecc4e4}} 
+\index{User@{User}!getFullName@{getFullName}}
+\index{getFullName@{getFullName}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getFullName()}{getFullName()}}
+{\footnotesize\ttfamily const std\+::string \& User\+::get\+Full\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_user_aee6af833e24993ff1056538c2c34e99c}\label{class_user_aee6af833e24993ff1056538c2c34e99c}} 
+\index{User@{User}!getPassword@{getPassword}}
+\index{getPassword@{getPassword}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getPassword()}{getPassword()}}
+{\footnotesize\ttfamily const std\+::string \& User\+::get\+Password (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_user_a867c46c99e36514018d8e1f0eab6893e}\label{class_user_a867c46c99e36514018d8e1f0eab6893e}} 
+\index{User@{User}!getPlaylists@{getPlaylists}}
+\index{getPlaylists@{getPlaylists}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getPlaylists()}{getPlaylists()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{class_playlist}{Playlist}} $\ast$ $>$ \& User\+::get\+Playlists (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_user_a0bdca63ed72fc8ffcee690a0119c2104}\label{class_user_a0bdca63ed72fc8ffcee690a0119c2104}} 
+\index{User@{User}!getUsername@{getUsername}}
+\index{getUsername@{getUsername}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getUsername()}{getUsername()}}
+{\footnotesize\ttfamily const std\+::string \& User\+::get\+Username (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_user_a4000a29e78a75a1174995260e007f0cd}\label{class_user_a4000a29e78a75a1174995260e007f0cd}} 
+\index{User@{User}!login@{login}}
+\index{login@{login}!User@{User}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily bool User\+::login (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username,  }\item[{const std\+::string \&}]{password }\end{DoxyParamCaption})}
+
+
+
+used in the controller to login. Checks if the username and password are correct for the exact instance of the class. 
+
+\mbox{\Hypertarget{class_user_a330ce3c74293488f5773eb1eb9bfb005}\label{class_user_a330ce3c74293488f5773eb1eb9bfb005}} 
+\index{User@{User}!removeFavGenre@{removeFavGenre}}
+\index{removeFavGenre@{removeFavGenre}!User@{User}}
+\doxysubsubsection{\texorpdfstring{removeFavGenre()}{removeFavGenre()}}
+{\footnotesize\ttfamily void User\+::remove\+Fav\+Genre (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_genre_8h_a5cd9403a8971f75311aa139040d38bbd}{Genre}} \&}]{genre }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_user_ad74904784d887471d5626762114fffec}\label{class_user_ad74904784d887471d5626762114fffec}} 
+\index{User@{User}!removeFavPlaylist@{removeFavPlaylist}}
+\index{removeFavPlaylist@{removeFavPlaylist}!User@{User}}
+\doxysubsubsection{\texorpdfstring{removeFavPlaylist()}{removeFavPlaylist()}}
+{\footnotesize\ttfamily void User\+::remove\+Fav\+Playlist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_playlist}{Playlist}} $\ast$}]{playlist }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_user_a4b3a6912221e0acb2238db0656d42cd1}\label{class_user_a4b3a6912221e0acb2238db0656d42cd1}} 
+\index{User@{User}!setBirthday@{setBirthday}}
+\index{setBirthday@{setBirthday}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setBirthday()}{setBirthday()}}
+{\footnotesize\ttfamily void User\+::set\+Birthday (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_date}{Date}} \&}]{birthday }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_user_aa0c81c44860c62c879d5cdde1b12ecdb}\label{class_user_aa0c81c44860c62c879d5cdde1b12ecdb}} 
+\index{User@{User}!setFullName@{setFullName}}
+\index{setFullName@{setFullName}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setFullName()}{setFullName()}}
+{\footnotesize\ttfamily void User\+::set\+Full\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{full\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_user_a4c0be2061d0bb5bbf80ac0a4fdde16ff}\label{class_user_a4c0be2061d0bb5bbf80ac0a4fdde16ff}} 
+\index{User@{User}!setPassword@{setPassword}}
+\index{setPassword@{setPassword}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setPassword()}{setPassword()}}
+{\footnotesize\ttfamily void User\+::set\+Password (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{password }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_user_a7abee4d4937156ba0c1a657b9b84ddef}\label{class_user_a7abee4d4937156ba0c1a657b9b84ddef}} 
+\index{User@{User}!setUsername@{setUsername}}
+\index{setUsername@{setUsername}!User@{User}}
+\doxysubsubsection{\texorpdfstring{setUsername()}{setUsername()}}
+{\footnotesize\ttfamily void User\+::set\+Username (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_user_ac78d47f233f75c24b5c8f51e3884a1ad}\label{class_user_ac78d47f233f75c24b5c8f51e3884a1ad}} 
+\index{User@{User}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!User@{User}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \mbox{\hyperlink{class_user}{User}} \&}]{current }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_user_a9f2da29843e33df09d9256fadc593c55}\label{class_user_a9f2da29843e33df09d9256fadc593c55}} 
+\index{User@{User}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!User@{User}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{class_user}{User}} \&}]{current }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_user_a5a97b51f09ee036664303016ce2fc72f}\label{class_user_a5a97b51f09ee036664303016ce2fc72f}} 
+\index{User@{User}!birthday@{birthday}}
+\index{birthday@{birthday}!User@{User}}
+\doxysubsubsection{\texorpdfstring{birthday}{birthday}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_date}{Date}} User\+::birthday\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_user_a69d047f2a01f6c617ca2b4b6f2b1b715}\label{class_user_a69d047f2a01f6c617ca2b4b6f2b1b715}} 
+\index{User@{User}!favGenres@{favGenres}}
+\index{favGenres@{favGenres}!User@{User}}
+\doxysubsubsection{\texorpdfstring{favGenres}{favGenres}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{_genre_8h_a5cd9403a8971f75311aa139040d38bbd}{Genre}}$>$ User\+::fav\+Genres\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_user_a0cf4d35683a5bbfb232721eb5877690d}\label{class_user_a0cf4d35683a5bbfb232721eb5877690d}} 
+\index{User@{User}!fullName@{fullName}}
+\index{fullName@{fullName}!User@{User}}
+\doxysubsubsection{\texorpdfstring{fullName}{fullName}}
+{\footnotesize\ttfamily std\+::string User\+::full\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_user_ac2f2e75b15e8eb6cbb030fc85a6cd59f}\label{class_user_ac2f2e75b15e8eb6cbb030fc85a6cd59f}} 
+\index{User@{User}!password@{password}}
+\index{password@{password}!User@{User}}
+\doxysubsubsection{\texorpdfstring{password}{password}}
+{\footnotesize\ttfamily std\+::string User\+::password\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_user_aa4f5ac605b23c2b7c27c224983c706ef}\label{class_user_aa4f5ac605b23c2b7c27c224983c706ef}} 
+\index{User@{User}!playlists@{playlists}}
+\index{playlists@{playlists}!User@{User}}
+\doxysubsubsection{\texorpdfstring{playlists}{playlists}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_playlist}{Playlist}}$\ast$$>$ User\+::playlists\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_user_aacbb807e514280f69e00bec7d71f3aee}\label{class_user_aacbb807e514280f69e00bec7d71f3aee}} 
+\index{User@{User}!username@{username}}
+\index{username@{username}!User@{User}}
+\doxysubsubsection{\texorpdfstring{username}{username}}
+{\footnotesize\ttfamily std\+::string User\+::username\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Programming/\+Data Structures/\+Project -\/ Musical Collection/\+Project -\/ Musical Collection/\mbox{\hyperlink{_user_8h}{User.\+h}}\item 
+D\+:/\+Programming/\+Data Structures/\+Project -\/ Musical Collection/\+Project -\/ Musical Collection/\mbox{\hyperlink{_user_8cpp}{User.\+cpp}}\end{DoxyCompactItemize}

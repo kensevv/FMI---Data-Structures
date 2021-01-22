@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['setalbumname_107',['setAlbumName',['../class_song.html#a0247c1a17e853938820f1a72498317c5',1,'Song']]],
+  ['setbirthday_108',['setBirthday',['../class_user.html#a4b3a6912221e0acb2238db0656d42cd1',1,'User']]],
+  ['setfullname_109',['setFullName',['../class_user.html#aa0c81c44860c62c879d5cdde1b12ecdb',1,'User']]],
+  ['setgenre_110',['setGenre',['../class_song.html#ab5fb171d6d87979bad2e373378d80582',1,'Song::setGenre(const Genre &amp;genre)'],['../class_song.html#a9b852159fe534336c6591adbad482ec1',1,'Song::setGenre(int genre)']]],
+  ['setid_111',['setID',['../class_song.html#a36a140eb0bfb579c82339964bf8d3716',1,'Song']]],
+  ['setname_112',['setName',['../class_playlist.html#a40cbb4ad8d4d839e7e1e9b22159e103d',1,'Playlist']]],
+  ['setpassword_113',['setPassword',['../class_user.html#a4c0be2061d0bb5bbf80ac0a4fdde16ff',1,'User']]],
+  ['setsingername_114',['setSingerName',['../class_song.html#aa6505c9a82edb7273ec1170a038aad8e',1,'Song']]],
+  ['setsongname_115',['setSongName',['../class_song.html#a3ef95de01774f85e82e5ed82277817bc',1,'Song']]],
+  ['setuser_116',['setUser',['../class_user_controller.html#a93d20f719c742cdf6551d14ebdac5006',1,'UserController']]],
+  ['setusername_117',['setUsername',['../class_user.html#a7abee4d4937156ba0c1a657b9b84ddef',1,'User']]],
+  ['setyearofproduction_118',['setYearOfProduction',['../class_song.html#af7dbc3739d0f6e6e8fb23b904fcf3879',1,'Song']]],
+  ['showallplaylistsbyname_119',['showAllPlaylistsbyName',['../class_user_controller.html#a702c2c9e2c857d85fa4edc36ccd854de',1,'UserController']]],
+  ['showcurrplaylistinfo_120',['showCurrPlaylistInfo',['../class_user_controller.html#ac778b14db8de69cce6fe2d98e58478e2',1,'UserController']]],
+  ['signinorup_121',['signInorUp',['../_interface_8cpp.html#a4335149667884616d2dd1b608f8f01b1',1,'Interface.cpp']]],
+  ['singername_122',['singerName',['../class_song.html#a26f35202836f983e3236d985ac4612da',1,'Song']]],
+  ['song_123',['Song',['../class_song.html',1,'Song'],['../class_song.html#a1a73ff262627ce78860ec622859cf249',1,'Song::Song()']]],
+  ['song_2ecpp_124',['Song.cpp',['../_song_8cpp.html',1,'']]],
+  ['song_2eh_125',['Song.h',['../_song_8h.html',1,'']]],
+  ['songname_126',['songName',['../class_song.html#a11e5da2844044d4d95f6b58fc5183427',1,'Song']]],
+  ['songs_127',['songs',['../class_playlist.html#ab6105a0cba6a56bf06542c1ed49902ba',1,'Playlist']]],
+  ['sortbyalforder_128',['sortByAlfOrder',['../class_playlist.html#ad0430c18e851a57447f7aab322f1b7d9',1,'Playlist']]],
+  ['sortplaylist_129',['sortPlaylist',['../class_user_controller.html#afd0a90e6e9e090642ef27174f5933435',1,'UserController']]],
+  ['successfullogin_130',['successfulLogin',['../_interface_8cpp.html#a711392e5f9a378547c0b3588fdfba78b',1,'Interface.cpp']]]
+];

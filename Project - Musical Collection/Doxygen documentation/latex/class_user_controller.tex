@@ -1,0 +1,318 @@
+\hypertarget{class_user_controller}{}\doxysection{User\+Controller Class Reference}
+\label{class_user_controller}\index{UserController@{UserController}}
+
+
+{\ttfamily \#include $<$User\+Controller.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user_controller_a5040cda0071333cee04575eba5af7e90}{User\+Controller}} ()
+\item 
+void \mbox{\hyperlink{class_user_controller_a93d20f719c742cdf6551d14ebdac5006}{set\+User}} (\mbox{\hyperlink{class_user}{User}} $\ast$\mbox{\hyperlink{class_user_controller_af8ae5ed9b8985a3e7e8639ba9c1e3fe7}{user}})
+\item 
+\mbox{\hyperlink{class_user}{User}} $\ast$ \mbox{\hyperlink{class_user_controller_ae1fbbb74947d4e99719f9a1cb306ba5e}{get\+User}} ()
+\item 
+void \mbox{\hyperlink{class_user_controller_a2bbaf86188e241aa7b252ce37ab0848b}{add\+Fav\+Genre}} (const \mbox{\hyperlink{_genre_8h_a5cd9403a8971f75311aa139040d38bbd}{Genre}} \&genre)
+\item 
+void \mbox{\hyperlink{class_user_controller_a6e168ac0200a0ded966a4eb238014afa}{remove\+Fav\+Genre}} (const \mbox{\hyperlink{_genre_8h_a5cd9403a8971f75311aa139040d38bbd}{Genre}} \&genre)
+\item 
+void \mbox{\hyperlink{class_user_controller_a9d9c83bdceb234b9055e861f610dac55}{add\+Fav\+Playlist}} ()
+\item 
+void \mbox{\hyperlink{class_user_controller_adf90bf4296ca9106c1cc96ecbc127761}{remove\+Fav\+Playlist}} ()
+\item 
+void \mbox{\hyperlink{class_user_controller_adc0fdace0478713a7d260a81b75bf7af}{rate\+Song}} ()
+\begin{DoxyCompactList}\small\item\em used to rate song selected by ID \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_controller_a849baf53c4948ff26f015f00ea34fc80}{add\+Song}} ()
+\begin{DoxyCompactList}\small\item\em Used to add song to global vector of songs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_controller_acfe6d1fc201678aa6d4f9fa2f53a1d29}{create\+Playlist}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_user}{User}} can manually create new playlist and modify it afterwards. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_controller_ae75625432e48356c62457ee4e2078eea}{generate\+Playlist\+For\+User}} ()
+\begin{DoxyCompactList}\small\item\em generates playlist for used, filtered by diffirent criterias \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_controller_a932a3686dd0dcdbb3c2831ba517dbfaf}{load\+Playlist\+By\+Name}} ()
+\begin{DoxyCompactList}\small\item\em used to load \textquotesingle{}currentplaylist\textquotesingle{} pointer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_controller_a8382fca28bd8f2f9e36e42625dc10ff7}{add\+Song\+To\+Current\+Playlist}} ()
+\begin{DoxyCompactList}\small\item\em adds a song by id to current playlist \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_controller_a1ece6ac00c7b7593669a65d87ea41f64}{remove\+Song\+From\+Current\+Playlist}} ()
+\begin{DoxyCompactList}\small\item\em removes a song by id from current playlist. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_controller_afd0a90e6e9e090642ef27174f5933435}{sort\+Playlist}} ()
+\begin{DoxyCompactList}\small\item\em calls sort function in playlist / sorts current playlist. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_controller_a99e01a296f545f2ce2a7ee5e9c6ef8fb}{rename\+Current\+Playlist}} ()
+\begin{DoxyCompactList}\small\item\em If it\textquotesingle{}s loaded, renames the playlist. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_controller_aeadc2ca513ec60d1f5311457d82f0ea4}{delete\+Current\+Playlist}} ()
+\begin{DoxyCompactList}\small\item\em if it\textquotesingle{}s loaded, deletes the current playlist \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_controller_ac778b14db8de69cce6fe2d98e58478e2}{show\+Curr\+Playlist\+Info}} ()
+\begin{DoxyCompactList}\small\item\em If loaded, outputs information for the current playlist only. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_controller_a702c2c9e2c857d85fa4edc36ccd854de}{show\+All\+Playlistsby\+Name}} ()
+\begin{DoxyCompactList}\small\item\em outputs the names only of all playlists. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_controller_a3ea49dd7736a43fc670459e285686b05}{list\+User\+Fav\+Genres}} ()
+\begin{DoxyCompactList}\small\item\em outputs user\textquotesingle{}s all favourite genres \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_user_controller_a31a1cb7f4a875a5c11b436ba51073916}{logout}} ()
+\begin{DoxyCompactList}\small\item\em logout from user -\/ resets the pointers to nullptr. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_user_controller_a575e191a85352680bfb3eeae152fe52b}{already\+Added}} (\mbox{\hyperlink{_genre_8h_a5cd9403a8971f75311aa139040d38bbd}{Genre}} genre)
+\item 
+bool \mbox{\hyperlink{class_user_controller_a12cc6fcbd1e88e1f0c2e4969ce213796}{already\+Added}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{class_user_controller_a5dfb1967b9f20a71b39b05a1efc4e860}{generate\+Playlist\+By\+Criterias}} (std\+::vector$<$ \mbox{\hyperlink{class_song}{Song}} $\ast$ $>$ \&fitting\+Songs, int size, int rating, std\+::vector$<$ \mbox{\hyperlink{_genre_8h_a5cd9403a8971f75311aa139040d38bbd}{Genre}} $>$ \&genres, int year\+Pref)
+\item 
+void \mbox{\hyperlink{class_user_controller_ab60c4751828aba35a1c52149c5d17f74}{filter\+Genres}} (std\+::vector$<$ \mbox{\hyperlink{_genre_8h_a5cd9403a8971f75311aa139040d38bbd}{Genre}} $>$ \&genres)
+\item 
+\mbox{\hyperlink{class_song}{Song}} $\ast$ \mbox{\hyperlink{class_user_controller_a878ff5cb6bbbb5a1b6672e0f60e85c24}{find\+Song\+By\+ID}} (size\+\_\+t ID)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_user}{User}} $\ast$ \mbox{\hyperlink{class_user_controller_af8ae5ed9b8985a3e7e8639ba9c1e3fe7}{user}}
+\begin{DoxyCompactList}\small\item\em we can log and work with 1 account using the controller. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_playlist}{Playlist}} $\ast$ \mbox{\hyperlink{class_user_controller_af22b02f6d521b409af97618a04661846}{current\+Playlist}}
+\begin{DoxyCompactList}\small\item\em interactively we can select a playlist to load and work with. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_user_controller_a5040cda0071333cee04575eba5af7e90}\label{class_user_controller_a5040cda0071333cee04575eba5af7e90}} 
+\index{UserController@{UserController}!UserController@{UserController}}
+\index{UserController@{UserController}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{UserController()}{UserController()}}
+{\footnotesize\ttfamily User\+Controller\+::\+User\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_user_controller_a2bbaf86188e241aa7b252ce37ab0848b}\label{class_user_controller_a2bbaf86188e241aa7b252ce37ab0848b}} 
+\index{UserController@{UserController}!addFavGenre@{addFavGenre}}
+\index{addFavGenre@{addFavGenre}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{addFavGenre()}{addFavGenre()}}
+{\footnotesize\ttfamily void User\+Controller\+::add\+Fav\+Genre (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_genre_8h_a5cd9403a8971f75311aa139040d38bbd}{Genre}} \&}]{genre }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_user_controller_a9d9c83bdceb234b9055e861f610dac55}\label{class_user_controller_a9d9c83bdceb234b9055e861f610dac55}} 
+\index{UserController@{UserController}!addFavPlaylist@{addFavPlaylist}}
+\index{addFavPlaylist@{addFavPlaylist}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{addFavPlaylist()}{addFavPlaylist()}}
+{\footnotesize\ttfamily void User\+Controller\+::add\+Fav\+Playlist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_user_controller_a849baf53c4948ff26f015f00ea34fc80}\label{class_user_controller_a849baf53c4948ff26f015f00ea34fc80}} 
+\index{UserController@{UserController}!addSong@{addSong}}
+\index{addSong@{addSong}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{addSong()}{addSong()}}
+{\footnotesize\ttfamily void User\+Controller\+::add\+Song (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Used to add song to global vector of songs. 
+
+\mbox{\Hypertarget{class_user_controller_a8382fca28bd8f2f9e36e42625dc10ff7}\label{class_user_controller_a8382fca28bd8f2f9e36e42625dc10ff7}} 
+\index{UserController@{UserController}!addSongToCurrentPlaylist@{addSongToCurrentPlaylist}}
+\index{addSongToCurrentPlaylist@{addSongToCurrentPlaylist}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{addSongToCurrentPlaylist()}{addSongToCurrentPlaylist()}}
+{\footnotesize\ttfamily void User\+Controller\+::add\+Song\+To\+Current\+Playlist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+adds a song by id to current playlist 
+
+\mbox{\Hypertarget{class_user_controller_a575e191a85352680bfb3eeae152fe52b}\label{class_user_controller_a575e191a85352680bfb3eeae152fe52b}} 
+\index{UserController@{UserController}!alreadyAdded@{alreadyAdded}}
+\index{alreadyAdded@{alreadyAdded}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{alreadyAdded()}{alreadyAdded()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool User\+Controller\+::already\+Added (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_genre_8h_a5cd9403a8971f75311aa139040d38bbd}{Genre}}}]{genre }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_user_controller_a12cc6fcbd1e88e1f0c2e4969ce213796}\label{class_user_controller_a12cc6fcbd1e88e1f0c2e4969ce213796}} 
+\index{UserController@{UserController}!alreadyAdded@{alreadyAdded}}
+\index{alreadyAdded@{alreadyAdded}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{alreadyAdded()}{alreadyAdded()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool User\+Controller\+::already\+Added (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_user_controller_acfe6d1fc201678aa6d4f9fa2f53a1d29}\label{class_user_controller_acfe6d1fc201678aa6d4f9fa2f53a1d29}} 
+\index{UserController@{UserController}!createPlaylist@{createPlaylist}}
+\index{createPlaylist@{createPlaylist}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{createPlaylist()}{createPlaylist()}}
+{\footnotesize\ttfamily void User\+Controller\+::create\+Playlist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_user}{User}} can manually create new playlist and modify it afterwards. 
+
+\mbox{\Hypertarget{class_user_controller_aeadc2ca513ec60d1f5311457d82f0ea4}\label{class_user_controller_aeadc2ca513ec60d1f5311457d82f0ea4}} 
+\index{UserController@{UserController}!deleteCurrentPlaylist@{deleteCurrentPlaylist}}
+\index{deleteCurrentPlaylist@{deleteCurrentPlaylist}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{deleteCurrentPlaylist()}{deleteCurrentPlaylist()}}
+{\footnotesize\ttfamily void User\+Controller\+::delete\+Current\+Playlist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+if it\textquotesingle{}s loaded, deletes the current playlist 
+
+\mbox{\Hypertarget{class_user_controller_ab60c4751828aba35a1c52149c5d17f74}\label{class_user_controller_ab60c4751828aba35a1c52149c5d17f74}} 
+\index{UserController@{UserController}!filterGenres@{filterGenres}}
+\index{filterGenres@{filterGenres}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{filterGenres()}{filterGenres()}}
+{\footnotesize\ttfamily void User\+Controller\+::filter\+Genres (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{_genre_8h_a5cd9403a8971f75311aa139040d38bbd}{Genre}} $>$ \&}]{genres }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_user_controller_a878ff5cb6bbbb5a1b6672e0f60e85c24}\label{class_user_controller_a878ff5cb6bbbb5a1b6672e0f60e85c24}} 
+\index{UserController@{UserController}!findSongByID@{findSongByID}}
+\index{findSongByID@{findSongByID}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{findSongByID()}{findSongByID()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_song}{Song}} $\ast$ User\+Controller\+::find\+Song\+By\+ID (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_user_controller_a5dfb1967b9f20a71b39b05a1efc4e860}\label{class_user_controller_a5dfb1967b9f20a71b39b05a1efc4e860}} 
+\index{UserController@{UserController}!generatePlaylistByCriterias@{generatePlaylistByCriterias}}
+\index{generatePlaylistByCriterias@{generatePlaylistByCriterias}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{generatePlaylistByCriterias()}{generatePlaylistByCriterias()}}
+{\footnotesize\ttfamily void User\+Controller\+::generate\+Playlist\+By\+Criterias (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_song}{Song}} $\ast$ $>$ \&}]{fitting\+Songs,  }\item[{int}]{size,  }\item[{int}]{rating,  }\item[{std\+::vector$<$ \mbox{\hyperlink{_genre_8h_a5cd9403a8971f75311aa139040d38bbd}{Genre}} $>$ \&}]{genres,  }\item[{int}]{year\+Pref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_user_controller_ae75625432e48356c62457ee4e2078eea}\label{class_user_controller_ae75625432e48356c62457ee4e2078eea}} 
+\index{UserController@{UserController}!generatePlaylistForUser@{generatePlaylistForUser}}
+\index{generatePlaylistForUser@{generatePlaylistForUser}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{generatePlaylistForUser()}{generatePlaylistForUser()}}
+{\footnotesize\ttfamily void User\+Controller\+::generate\+Playlist\+For\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+generates playlist for used, filtered by diffirent criterias 
+
+\mbox{\Hypertarget{class_user_controller_ae1fbbb74947d4e99719f9a1cb306ba5e}\label{class_user_controller_ae1fbbb74947d4e99719f9a1cb306ba5e}} 
+\index{UserController@{UserController}!getUser@{getUser}}
+\index{getUser@{getUser}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{getUser()}{getUser()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_user}{User}} $\ast$ User\+Controller\+::get\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_user_controller_a3ea49dd7736a43fc670459e285686b05}\label{class_user_controller_a3ea49dd7736a43fc670459e285686b05}} 
+\index{UserController@{UserController}!listUserFavGenres@{listUserFavGenres}}
+\index{listUserFavGenres@{listUserFavGenres}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{listUserFavGenres()}{listUserFavGenres()}}
+{\footnotesize\ttfamily void User\+Controller\+::list\+User\+Fav\+Genres (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+outputs user\textquotesingle{}s all favourite genres 
+
+\mbox{\Hypertarget{class_user_controller_a932a3686dd0dcdbb3c2831ba517dbfaf}\label{class_user_controller_a932a3686dd0dcdbb3c2831ba517dbfaf}} 
+\index{UserController@{UserController}!loadPlaylistByName@{loadPlaylistByName}}
+\index{loadPlaylistByName@{loadPlaylistByName}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{loadPlaylistByName()}{loadPlaylistByName()}}
+{\footnotesize\ttfamily void User\+Controller\+::load\+Playlist\+By\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+used to load \textquotesingle{}currentplaylist\textquotesingle{} pointer. 
+
+\mbox{\Hypertarget{class_user_controller_a31a1cb7f4a875a5c11b436ba51073916}\label{class_user_controller_a31a1cb7f4a875a5c11b436ba51073916}} 
+\index{UserController@{UserController}!logout@{logout}}
+\index{logout@{logout}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{logout()}{logout()}}
+{\footnotesize\ttfamily void User\+Controller\+::logout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+logout from user -\/ resets the pointers to nullptr. 
+
+\mbox{\Hypertarget{class_user_controller_adc0fdace0478713a7d260a81b75bf7af}\label{class_user_controller_adc0fdace0478713a7d260a81b75bf7af}} 
+\index{UserController@{UserController}!rateSong@{rateSong}}
+\index{rateSong@{rateSong}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{rateSong()}{rateSong()}}
+{\footnotesize\ttfamily void User\+Controller\+::rate\+Song (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+used to rate song selected by ID 
+
+\mbox{\Hypertarget{class_user_controller_a6e168ac0200a0ded966a4eb238014afa}\label{class_user_controller_a6e168ac0200a0ded966a4eb238014afa}} 
+\index{UserController@{UserController}!removeFavGenre@{removeFavGenre}}
+\index{removeFavGenre@{removeFavGenre}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{removeFavGenre()}{removeFavGenre()}}
+{\footnotesize\ttfamily void User\+Controller\+::remove\+Fav\+Genre (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_genre_8h_a5cd9403a8971f75311aa139040d38bbd}{Genre}} \&}]{genre }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_user_controller_adf90bf4296ca9106c1cc96ecbc127761}\label{class_user_controller_adf90bf4296ca9106c1cc96ecbc127761}} 
+\index{UserController@{UserController}!removeFavPlaylist@{removeFavPlaylist}}
+\index{removeFavPlaylist@{removeFavPlaylist}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{removeFavPlaylist()}{removeFavPlaylist()}}
+{\footnotesize\ttfamily void User\+Controller\+::remove\+Fav\+Playlist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_user_controller_a1ece6ac00c7b7593669a65d87ea41f64}\label{class_user_controller_a1ece6ac00c7b7593669a65d87ea41f64}} 
+\index{UserController@{UserController}!removeSongFromCurrentPlaylist@{removeSongFromCurrentPlaylist}}
+\index{removeSongFromCurrentPlaylist@{removeSongFromCurrentPlaylist}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{removeSongFromCurrentPlaylist()}{removeSongFromCurrentPlaylist()}}
+{\footnotesize\ttfamily void User\+Controller\+::remove\+Song\+From\+Current\+Playlist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+removes a song by id from current playlist. 
+
+\mbox{\Hypertarget{class_user_controller_a99e01a296f545f2ce2a7ee5e9c6ef8fb}\label{class_user_controller_a99e01a296f545f2ce2a7ee5e9c6ef8fb}} 
+\index{UserController@{UserController}!renameCurrentPlaylist@{renameCurrentPlaylist}}
+\index{renameCurrentPlaylist@{renameCurrentPlaylist}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{renameCurrentPlaylist()}{renameCurrentPlaylist()}}
+{\footnotesize\ttfamily void User\+Controller\+::rename\+Current\+Playlist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+If it\textquotesingle{}s loaded, renames the playlist. 
+
+\mbox{\Hypertarget{class_user_controller_a93d20f719c742cdf6551d14ebdac5006}\label{class_user_controller_a93d20f719c742cdf6551d14ebdac5006}} 
+\index{UserController@{UserController}!setUser@{setUser}}
+\index{setUser@{setUser}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{setUser()}{setUser()}}
+{\footnotesize\ttfamily void User\+Controller\+::set\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_user}{User}} $\ast$}]{user }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_user_controller_a702c2c9e2c857d85fa4edc36ccd854de}\label{class_user_controller_a702c2c9e2c857d85fa4edc36ccd854de}} 
+\index{UserController@{UserController}!showAllPlaylistsbyName@{showAllPlaylistsbyName}}
+\index{showAllPlaylistsbyName@{showAllPlaylistsbyName}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{showAllPlaylistsbyName()}{showAllPlaylistsbyName()}}
+{\footnotesize\ttfamily void User\+Controller\+::show\+All\+Playlistsby\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+outputs the names only of all playlists. 
+
+\mbox{\Hypertarget{class_user_controller_ac778b14db8de69cce6fe2d98e58478e2}\label{class_user_controller_ac778b14db8de69cce6fe2d98e58478e2}} 
+\index{UserController@{UserController}!showCurrPlaylistInfo@{showCurrPlaylistInfo}}
+\index{showCurrPlaylistInfo@{showCurrPlaylistInfo}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{showCurrPlaylistInfo()}{showCurrPlaylistInfo()}}
+{\footnotesize\ttfamily void User\+Controller\+::show\+Curr\+Playlist\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+If loaded, outputs information for the current playlist only. 
+
+\mbox{\Hypertarget{class_user_controller_afd0a90e6e9e090642ef27174f5933435}\label{class_user_controller_afd0a90e6e9e090642ef27174f5933435}} 
+\index{UserController@{UserController}!sortPlaylist@{sortPlaylist}}
+\index{sortPlaylist@{sortPlaylist}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{sortPlaylist()}{sortPlaylist()}}
+{\footnotesize\ttfamily void User\+Controller\+::sort\+Playlist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+calls sort function in playlist / sorts current playlist. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_user_controller_af22b02f6d521b409af97618a04661846}\label{class_user_controller_af22b02f6d521b409af97618a04661846}} 
+\index{UserController@{UserController}!currentPlaylist@{currentPlaylist}}
+\index{currentPlaylist@{currentPlaylist}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{currentPlaylist}{currentPlaylist}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_playlist}{Playlist}}$\ast$ User\+Controller\+::current\+Playlist\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+interactively we can select a playlist to load and work with. 
+
+\mbox{\Hypertarget{class_user_controller_af8ae5ed9b8985a3e7e8639ba9c1e3fe7}\label{class_user_controller_af8ae5ed9b8985a3e7e8639ba9c1e3fe7}} 
+\index{UserController@{UserController}!user@{user}}
+\index{user@{user}!UserController@{UserController}}
+\doxysubsubsection{\texorpdfstring{user}{user}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_user}{User}}$\ast$ User\+Controller\+::user\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+we can log and work with 1 account using the controller. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Programming/\+Data Structures/\+Project -\/ Musical Collection/\+Project -\/ Musical Collection/\mbox{\hyperlink{_user_controller_8h}{User\+Controller.\+h}}\item 
+D\+:/\+Programming/\+Data Structures/\+Project -\/ Musical Collection/\+Project -\/ Musical Collection/\mbox{\hyperlink{_user_controller_8cpp}{User\+Controller.\+cpp}}\end{DoxyCompactItemize}

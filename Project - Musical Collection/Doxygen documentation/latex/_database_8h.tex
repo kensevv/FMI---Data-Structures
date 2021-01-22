@@ -1,0 +1,153 @@
+\hypertarget{_database_8h}{}\doxysection{D\+:/\+Programming/\+Data Structures/\+Project -\/ Musical Collection/\+Project -\/ Musical Collection/\+Database.h File Reference}
+\label{_database_8h}\index{D:/Programming/Data Structures/Project -\/ Musical Collection/Project -\/ Musical Collection/Database.h@{D:/Programming/Data Structures/Project -\/ Musical Collection/Project -\/ Musical Collection/Database.h}}
+{\ttfamily \#include \char`\"{}User.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Playlist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Song.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}User\+Controller.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_database_8h_a76355f15da2c2c07a406e7099bcaab85}{write\+Files}} ()
+\begin{DoxyCompactList}\small\item\em outputs the data into 3 seperate txt files for each vector \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_database_8h_a24a4766a7dc6fdbe9837a00e1f4c6b44}{file\+Write\+Users}} ()
+\item 
+void \mbox{\hyperlink{_database_8h_a056631be0ae12789a115063ec7070caf}{file\+Write\+Songs}} ()
+\item 
+void \mbox{\hyperlink{_database_8h_a91078adf78c461c066344ccf964d1255}{file\+Write\+Playlists}} ()
+\item 
+void \mbox{\hyperlink{_database_8h_a9c3c12a5dec5dfef70fb36340e470bbb}{read\+Files}} ()
+\begin{DoxyCompactList}\small\item\em inputs the data from the txt files into the global vectors \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_database_8h_a3d24943bbdd37a2ac27d5f7c9b996ab1}{file\+Read\+Songs}} ()
+\item 
+\mbox{\hyperlink{class_song}{Song}} $\ast$ \mbox{\hyperlink{_database_8h_a886d6c0558843182c3ed4582d0028fe2}{find\+Song\+By\+ID}} (int song\+ID)
+\begin{DoxyCompactList}\small\item\em returns song By id from Gsongs \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_database_8h_afb8b556f0dc265755f74988bdfabec7f}{file\+Read\+Playlists}} ()
+\item 
+\mbox{\hyperlink{class_playlist}{Playlist}} $\ast$ \mbox{\hyperlink{_database_8h_ada3641cbb94f5867e9f989d3c38acb18}{find\+Playlist\+By\+Name}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em returns playlist by name from Gplaylists \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_database_8h_a330a94a6da7f758d2a46156052fae20c}{file\+Read\+Users}} ()
+\item 
+void \mbox{\hyperlink{_database_8h_afa1df12835787c07c3de1123b997e64c}{list\+All\+Songs}} ()
+\begin{DoxyCompactList}\small\item\em outputs all songs in the database to the console \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_user}{User}} $>$ \mbox{\hyperlink{_database_8h_a038dd6b23f3f384c44465f5dacd8def7}{Gusers}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_playlist}{Playlist}} $>$ \mbox{\hyperlink{_database_8h_a3968dce8607479292045e3e592e9c044}{Gplaylists}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_song}{Song}} $>$ \mbox{\hyperlink{_database_8h_a6907f7afe14f8de4590f4491dddc1dfb}{Gsongs}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_database_8h_afb8b556f0dc265755f74988bdfabec7f}\label{_database_8h_afb8b556f0dc265755f74988bdfabec7f}} 
+\index{Database.h@{Database.h}!fileReadPlaylists@{fileReadPlaylists}}
+\index{fileReadPlaylists@{fileReadPlaylists}!Database.h@{Database.h}}
+\doxysubsubsection{\texorpdfstring{fileReadPlaylists()}{fileReadPlaylists()}}
+{\footnotesize\ttfamily void file\+Read\+Playlists (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_database_8h_a3d24943bbdd37a2ac27d5f7c9b996ab1}\label{_database_8h_a3d24943bbdd37a2ac27d5f7c9b996ab1}} 
+\index{Database.h@{Database.h}!fileReadSongs@{fileReadSongs}}
+\index{fileReadSongs@{fileReadSongs}!Database.h@{Database.h}}
+\doxysubsubsection{\texorpdfstring{fileReadSongs()}{fileReadSongs()}}
+{\footnotesize\ttfamily void file\+Read\+Songs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_database_8h_a330a94a6da7f758d2a46156052fae20c}\label{_database_8h_a330a94a6da7f758d2a46156052fae20c}} 
+\index{Database.h@{Database.h}!fileReadUsers@{fileReadUsers}}
+\index{fileReadUsers@{fileReadUsers}!Database.h@{Database.h}}
+\doxysubsubsection{\texorpdfstring{fileReadUsers()}{fileReadUsers()}}
+{\footnotesize\ttfamily void file\+Read\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_database_8h_a91078adf78c461c066344ccf964d1255}\label{_database_8h_a91078adf78c461c066344ccf964d1255}} 
+\index{Database.h@{Database.h}!fileWritePlaylists@{fileWritePlaylists}}
+\index{fileWritePlaylists@{fileWritePlaylists}!Database.h@{Database.h}}
+\doxysubsubsection{\texorpdfstring{fileWritePlaylists()}{fileWritePlaylists()}}
+{\footnotesize\ttfamily void file\+Write\+Playlists (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_database_8h_a056631be0ae12789a115063ec7070caf}\label{_database_8h_a056631be0ae12789a115063ec7070caf}} 
+\index{Database.h@{Database.h}!fileWriteSongs@{fileWriteSongs}}
+\index{fileWriteSongs@{fileWriteSongs}!Database.h@{Database.h}}
+\doxysubsubsection{\texorpdfstring{fileWriteSongs()}{fileWriteSongs()}}
+{\footnotesize\ttfamily void file\+Write\+Songs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_database_8h_a24a4766a7dc6fdbe9837a00e1f4c6b44}\label{_database_8h_a24a4766a7dc6fdbe9837a00e1f4c6b44}} 
+\index{Database.h@{Database.h}!fileWriteUsers@{fileWriteUsers}}
+\index{fileWriteUsers@{fileWriteUsers}!Database.h@{Database.h}}
+\doxysubsubsection{\texorpdfstring{fileWriteUsers()}{fileWriteUsers()}}
+{\footnotesize\ttfamily void file\+Write\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_database_8h_ada3641cbb94f5867e9f989d3c38acb18}\label{_database_8h_ada3641cbb94f5867e9f989d3c38acb18}} 
+\index{Database.h@{Database.h}!findPlaylistByName@{findPlaylistByName}}
+\index{findPlaylistByName@{findPlaylistByName}!Database.h@{Database.h}}
+\doxysubsubsection{\texorpdfstring{findPlaylistByName()}{findPlaylistByName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_playlist}{Playlist}}$\ast$ find\+Playlist\+By\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+returns playlist by name from Gplaylists 
+
+\mbox{\Hypertarget{_database_8h_a886d6c0558843182c3ed4582d0028fe2}\label{_database_8h_a886d6c0558843182c3ed4582d0028fe2}} 
+\index{Database.h@{Database.h}!findSongByID@{findSongByID}}
+\index{findSongByID@{findSongByID}!Database.h@{Database.h}}
+\doxysubsubsection{\texorpdfstring{findSongByID()}{findSongByID()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_song}{Song}}$\ast$ find\+Song\+By\+ID (\begin{DoxyParamCaption}\item[{int}]{song\+ID }\end{DoxyParamCaption})}
+
+
+
+returns song By id from Gsongs 
+
+\mbox{\Hypertarget{_database_8h_afa1df12835787c07c3de1123b997e64c}\label{_database_8h_afa1df12835787c07c3de1123b997e64c}} 
+\index{Database.h@{Database.h}!listAllSongs@{listAllSongs}}
+\index{listAllSongs@{listAllSongs}!Database.h@{Database.h}}
+\doxysubsubsection{\texorpdfstring{listAllSongs()}{listAllSongs()}}
+{\footnotesize\ttfamily void list\+All\+Songs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+outputs all songs in the database to the console 
+
+\mbox{\Hypertarget{_database_8h_a9c3c12a5dec5dfef70fb36340e470bbb}\label{_database_8h_a9c3c12a5dec5dfef70fb36340e470bbb}} 
+\index{Database.h@{Database.h}!readFiles@{readFiles}}
+\index{readFiles@{readFiles}!Database.h@{Database.h}}
+\doxysubsubsection{\texorpdfstring{readFiles()}{readFiles()}}
+{\footnotesize\ttfamily void read\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+inputs the data from the txt files into the global vectors 
+
+\mbox{\Hypertarget{_database_8h_a76355f15da2c2c07a406e7099bcaab85}\label{_database_8h_a76355f15da2c2c07a406e7099bcaab85}} 
+\index{Database.h@{Database.h}!writeFiles@{writeFiles}}
+\index{writeFiles@{writeFiles}!Database.h@{Database.h}}
+\doxysubsubsection{\texorpdfstring{writeFiles()}{writeFiles()}}
+{\footnotesize\ttfamily void write\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+outputs the data into 3 seperate txt files for each vector 
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_database_8h_a3968dce8607479292045e3e592e9c044}\label{_database_8h_a3968dce8607479292045e3e592e9c044}} 
+\index{Database.h@{Database.h}!Gplaylists@{Gplaylists}}
+\index{Gplaylists@{Gplaylists}!Database.h@{Database.h}}
+\doxysubsubsection{\texorpdfstring{Gplaylists}{Gplaylists}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_playlist}{Playlist}}$>$ Gplaylists\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{_database_8h_a6907f7afe14f8de4590f4491dddc1dfb}\label{_database_8h_a6907f7afe14f8de4590f4491dddc1dfb}} 
+\index{Database.h@{Database.h}!Gsongs@{Gsongs}}
+\index{Gsongs@{Gsongs}!Database.h@{Database.h}}
+\doxysubsubsection{\texorpdfstring{Gsongs}{Gsongs}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_song}{Song}}$>$ Gsongs\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{_database_8h_a038dd6b23f3f384c44465f5dacd8def7}\label{_database_8h_a038dd6b23f3f384c44465f5dacd8def7}} 
+\index{Database.h@{Database.h}!Gusers@{Gusers}}
+\index{Gusers@{Gusers}!Database.h@{Database.h}}
+\doxysubsubsection{\texorpdfstring{Gusers}{Gusers}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_user}{User}}$>$ Gusers\hspace{0.3cm}{\ttfamily [extern]}}
+

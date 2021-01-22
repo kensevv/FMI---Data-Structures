@@ -1,0 +1,115 @@
+\hypertarget{_interface_8cpp}{}\doxysection{D\+:/\+Programming/\+Data Structures/\+Project -\/ Musical Collection/\+Project -\/ Musical Collection/\+Interface.cpp File Reference}
+\label{_interface_8cpp}\index{D:/Programming/Data Structures/Project -\/ Musical Collection/Project -\/ Musical Collection/Interface.cpp@{D:/Programming/Data Structures/Project -\/ Musical Collection/Project -\/ Musical Collection/Interface.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}Date.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Genre.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Song.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Playlist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}User.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}User\+Controller.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Database.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}algorithms.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_interface_8cpp_a4335149667884616d2dd1b608f8f01b1}{sign\+Inor\+Up}} ()
+\item 
+void \mbox{\hyperlink{_interface_8cpp_afdf1ca9e7afc3e7ec41b47fea4b3d80d}{Menu}} ()
+\item 
+void \mbox{\hyperlink{_interface_8cpp_ae1661b989f1105a04d036eed6d29ff05}{output\+User\+Options}} ()
+\item 
+void \mbox{\hyperlink{_interface_8cpp_a7ccd1a64c079bdffc996ef6bac424b32}{user\+Options}} (std\+::string str)
+\item 
+void \mbox{\hyperlink{_interface_8cpp_a70e7dab548be6d37f79761988ec8222c}{Register}} ()
+\item 
+void \mbox{\hyperlink{_interface_8cpp_a89ae401ad299a02bf9e1d3bd746d79c8}{Login}} ()
+\item 
+bool \mbox{\hyperlink{_interface_8cpp_a711392e5f9a378547c0b3588fdfba78b}{successful\+Login}} (std\+::string username, std\+::string password)
+\item 
+void \mbox{\hyperlink{_interface_8cpp_a83581631b98984ecc1053a07d492fe87}{Logout}} ()
+\item 
+int \mbox{\hyperlink{_interface_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{_interface_8cpp_a8f538a1ebc4046150e45f24f1f27104b}{Exit}} = false
+\item 
+\mbox{\hyperlink{class_user_controller}{User\+Controller}} \mbox{\hyperlink{_interface_8cpp_a5316ed145b1d5d1b5a18a1638ac7554c}{user\+Controller}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_interface_8cpp_a89ae401ad299a02bf9e1d3bd746d79c8}\label{_interface_8cpp_a89ae401ad299a02bf9e1d3bd746d79c8}} 
+\index{Interface.cpp@{Interface.cpp}!Login@{Login}}
+\index{Login@{Login}!Interface.cpp@{Interface.cpp}}
+\doxysubsubsection{\texorpdfstring{Login()}{Login()}}
+{\footnotesize\ttfamily void Login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_interface_8cpp_a83581631b98984ecc1053a07d492fe87}\label{_interface_8cpp_a83581631b98984ecc1053a07d492fe87}} 
+\index{Interface.cpp@{Interface.cpp}!Logout@{Logout}}
+\index{Logout@{Logout}!Interface.cpp@{Interface.cpp}}
+\doxysubsubsection{\texorpdfstring{Logout()}{Logout()}}
+{\footnotesize\ttfamily void Logout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_interface_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_interface_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Interface.cpp@{Interface.cpp}!main@{main}}
+\index{main@{main}!Interface.cpp@{Interface.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_interface_8cpp_afdf1ca9e7afc3e7ec41b47fea4b3d80d}\label{_interface_8cpp_afdf1ca9e7afc3e7ec41b47fea4b3d80d}} 
+\index{Interface.cpp@{Interface.cpp}!Menu@{Menu}}
+\index{Menu@{Menu}!Interface.cpp@{Interface.cpp}}
+\doxysubsubsection{\texorpdfstring{Menu()}{Menu()}}
+{\footnotesize\ttfamily void Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_interface_8cpp_ae1661b989f1105a04d036eed6d29ff05}\label{_interface_8cpp_ae1661b989f1105a04d036eed6d29ff05}} 
+\index{Interface.cpp@{Interface.cpp}!outputUserOptions@{outputUserOptions}}
+\index{outputUserOptions@{outputUserOptions}!Interface.cpp@{Interface.cpp}}
+\doxysubsubsection{\texorpdfstring{outputUserOptions()}{outputUserOptions()}}
+{\footnotesize\ttfamily void output\+User\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_interface_8cpp_a70e7dab548be6d37f79761988ec8222c}\label{_interface_8cpp_a70e7dab548be6d37f79761988ec8222c}} 
+\index{Interface.cpp@{Interface.cpp}!Register@{Register}}
+\index{Register@{Register}!Interface.cpp@{Interface.cpp}}
+\doxysubsubsection{\texorpdfstring{Register()}{Register()}}
+{\footnotesize\ttfamily void Register (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_interface_8cpp_a4335149667884616d2dd1b608f8f01b1}\label{_interface_8cpp_a4335149667884616d2dd1b608f8f01b1}} 
+\index{Interface.cpp@{Interface.cpp}!signInorUp@{signInorUp}}
+\index{signInorUp@{signInorUp}!Interface.cpp@{Interface.cpp}}
+\doxysubsubsection{\texorpdfstring{signInorUp()}{signInorUp()}}
+{\footnotesize\ttfamily void sign\+Inor\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_interface_8cpp_a711392e5f9a378547c0b3588fdfba78b}\label{_interface_8cpp_a711392e5f9a378547c0b3588fdfba78b}} 
+\index{Interface.cpp@{Interface.cpp}!successfulLogin@{successfulLogin}}
+\index{successfulLogin@{successfulLogin}!Interface.cpp@{Interface.cpp}}
+\doxysubsubsection{\texorpdfstring{successfulLogin()}{successfulLogin()}}
+{\footnotesize\ttfamily bool successful\+Login (\begin{DoxyParamCaption}\item[{std\+::string}]{username,  }\item[{std\+::string}]{password }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_interface_8cpp_a7ccd1a64c079bdffc996ef6bac424b32}\label{_interface_8cpp_a7ccd1a64c079bdffc996ef6bac424b32}} 
+\index{Interface.cpp@{Interface.cpp}!userOptions@{userOptions}}
+\index{userOptions@{userOptions}!Interface.cpp@{Interface.cpp}}
+\doxysubsubsection{\texorpdfstring{userOptions()}{userOptions()}}
+{\footnotesize\ttfamily void user\+Options (\begin{DoxyParamCaption}\item[{std\+::string}]{str }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_interface_8cpp_a8f538a1ebc4046150e45f24f1f27104b}\label{_interface_8cpp_a8f538a1ebc4046150e45f24f1f27104b}} 
+\index{Interface.cpp@{Interface.cpp}!Exit@{Exit}}
+\index{Exit@{Exit}!Interface.cpp@{Interface.cpp}}
+\doxysubsubsection{\texorpdfstring{Exit}{Exit}}
+{\footnotesize\ttfamily bool Exit = false}
+
+\mbox{\Hypertarget{_interface_8cpp_a5316ed145b1d5d1b5a18a1638ac7554c}\label{_interface_8cpp_a5316ed145b1d5d1b5a18a1638ac7554c}} 
+\index{Interface.cpp@{Interface.cpp}!userController@{userController}}
+\index{userController@{userController}!Interface.cpp@{Interface.cpp}}
+\doxysubsubsection{\texorpdfstring{userController}{userController}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_user_controller}{User\+Controller}} user\+Controller}
+
