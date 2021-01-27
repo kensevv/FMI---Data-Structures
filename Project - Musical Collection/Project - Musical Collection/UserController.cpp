@@ -336,7 +336,8 @@ void UserController::renameCurrentPlaylist()
 		std::cout << "There is no loaded playlists!" << std::endl;
 		return;
 	}
-	std::string newName; std::getline(std::cin, newName);
+	std::string newName;
+	std::cout << "Enter new name: ";  std::getline(std::cin, newName);
 	this->currentPlaylist->setName(newName);
 	std::cout << "Renamed!" << std::endl;
 }
