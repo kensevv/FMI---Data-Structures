@@ -26,13 +26,6 @@ Node Map::findNode(const std::string& location)
 	return Node("", -1);
 }
 
-inline Map::Map(size_t size)
-{
-	this->size = size;
-	this->currID = 0;
-	this->graphAdjacent.resize(size);
-}
-
 Map::Map(std::ifstream& in)
 {
 	this->currID = 0;
@@ -138,4 +131,19 @@ void Map::updateMapFile(std::ofstream& out)
 		}
 	}
 	out.close();
+}
+
+const unsigned int Map::getSize() const
+{
+	return this->size;
+}
+
+const unsigned int Map::getCurrID() const
+{
+	return this->currID;
+}
+
+const std::vector<std::list<std::pair<Node, int>>>& Map::getGraphAdjacent() const
+{
+	return this->graphAdjacent;
 }

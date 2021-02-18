@@ -4,31 +4,110 @@
 #include "doctest.h"
 #include "Map.h"
 
-std::ifstream in("map.txt");
-Map map(in);
 
-TEST_CASE("Read Graph From File TEST")
+/*
+(node1 0) -> (node2 1) -> (node3 2)
+(node2 0) -> (node3 3)
+(node3 0) -> (node4 4)
+(node4 0)
+*/
+
+TEST_CASE("Read Graph From File + addnode + addedge TESTs")
 {
+	std::ifstream in("doctestMAP tests.txt");
+	Map testmap(in);
 
-}
+	Node t1("node1", 0);
+	Node t2("node2", 1);
+	Node t3("node3", 2);
+	Node t4("node4", 3);
 
-TEST_CASE("addNode test")
-{
+	CHECK(testmap.getGraphAdjacent()[0].front().first == t1);
+	CHECK(testmap.getGraphAdjacent()[1].front().first == t2);
+	CHECK(testmap.getGraphAdjacent()[2].front().first == t3);
+	CHECK(testmap.getGraphAdjacent()[3].front().first == t4);
 
-}
+	CHECK(testmap.getGraphAdjacent()[0].front().first.nodeID == 0);
+	CHECK(testmap.getGraphAdjacent()[1].front().first.nodeID == 1);
+	CHECK(testmap.getGraphAdjacent()[2].front().first.nodeID == 2);
+	CHECK(testmap.getGraphAdjacent()[3].front().first.nodeID == 3);
 
-TEST_CASE("addEdge test")
-{
+	CHECK(testmap.getGraphAdjacent()[4].empty());
 
+	int countNodesingraph = 0;
+	for (const auto& node : testmap.getGraphAdjacent())
+	{
+		if (!node.empty())
+		{
+			countNodesingraph++;
+		}
+	}
+	CHECK(countNodesingraph == 4);
+
+	CHECK(testmap.getGraphAdjacent()[0].back().first.location == "node3");
+	CHECK(testmap.getGraphAdjacent()[0].back().second == 2);
+	CHECK(testmap.getGraphAdjacent()[0].size() == 3);
+	
+	CHECK(testmap.getGraphAdjacent()[1].back().first.location == "node3");
+	CHECK(testmap.getGraphAdjacent()[1].back().second == 3);
+	CHECK(testmap.getGraphAdjacent()[1].size() == 2);
+	
+	CHECK(testmap.getGraphAdjacent()[2].back().first.location == "node4");
+	CHECK(testmap.getGraphAdjacent()[2].back().second == 4);
+	CHECK(testmap.getGraphAdjacent()[2].size() == 2);
+
+	CHECK(testmap.getGraphAdjacent()[3].size() == 1);
+
+	for (size_t i = 4; i < testmap.getGraphAdjacent().size(); i++)
+	{
+		CHECK(testmap.getGraphAdjacent()[i].empty());
+	}
 }
 
 TEST_CASE("hasPath Test")
 {
-	
-	CHECK(map.hasPath("node1", "node2") == 1);
-	CHECK(map.hasPath("node1", "node3") == 1);
-	CHECK(map.hasPath("node2", "node3") == 1);
-	CHECK(map.hasPath("node2", "node1") == 0);
-	CHECK(map.hasPath("node3", "node1") == 0);
-	CHECK(map.hasPath("node3", "node2") == 0);
+	std::ifstream in("doctestMAP tests.txt");
+	Map testmap(in);
+
+	CHECK(testmap.hasPath("node1", "node2") == 1);
+	CHECK(testmap.hasPath("node1", "node3") == 1);
+	CHECK(testmap.hasPath("node2", "node3") == 1);
+	CHECK(testmap.hasPath("node2", "node1") == 0);
+	CHECK(testmap.hasPath("node3", "node1") == 0);
+	CHECK(testmap.hasPath("node3", "node2") == 0);
+	CHECK(testmap.hasPath("node3", "node4") == 1);
+	CHECK(testmap.hasPath("node4", "node1") == 0);
+	CHECK(testmap.hasPath("node4", "node2") == 0);
+	CHECK(testmap.hasPath("node4", "node3") == 0);
+	CHECK(testmap.hasPath("node1", "node4") == 1);
+	CHECK(testmap.hasPath("node2", "node4") == 1);
+
+	Node t1("node1", 0);
+	Node t2("node2", 1);
+	Node t3("node3", 2);
+	Node t4("node4", 3);
+
+	//another test for adding edges
+	testmap.addEdge(t4, t2, 5);
+	testmap.addEdge(t2, t1, 5);
+	/*
+		new graph:
+
+		(node1 0) -> (node2 1) -> (node3 2)
+		(node2 0) -> (node3 3) -> (node1 5)
+		(node3 0) -> (node4 4)
+		(node4 0) -> (node1 5)
+	*/
+	CHECK(testmap.hasPath("node1", "node2") == 1);
+	CHECK(testmap.hasPath("node1", "node3") == 1);
+	CHECK(testmap.hasPath("node2", "node3") == 1);
+	CHECK(testmap.hasPath("node2", "node1") == 1);
+	CHECK(testmap.hasPath("node3", "node1") == 1);
+	CHECK(testmap.hasPath("node3", "node2") == 1);
+	CHECK(testmap.hasPath("node3", "node4") == 1);
+	CHECK(testmap.hasPath("node4", "node1") == 1);
+	CHECK(testmap.hasPath("node4", "node2") == 1);
+	CHECK(testmap.hasPath("node4", "node3") == 1);
+	CHECK(testmap.hasPath("node1", "node4") == 1);
+	CHECK(testmap.hasPath("node2", "node4") == 1);
 }
