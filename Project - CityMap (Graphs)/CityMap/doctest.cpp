@@ -64,11 +64,11 @@ TEST_CASE("Read Graph From File + addnode + addedge TESTs")
 	}
 }
 
-TEST_CASE("hasPath Test")
+TEST_CASE("hasPath Tests with / without closed roads given")
 {
 	std::ifstream in("doctestMAP tests.txt");
 	Map testmap(in);
-
+	//TESTS FOR NO CLOSED NODES
 	CHECK(testmap.hasPath("node1", "node2") == 1);
 	CHECK(testmap.hasPath("node1", "node3") == 1);
 	CHECK(testmap.hasPath("node2", "node3") == 1);
@@ -110,4 +110,25 @@ TEST_CASE("hasPath Test")
 	CHECK(testmap.hasPath("node4", "node3") == 1);
 	CHECK(testmap.hasPath("node1", "node4") == 1);
 	CHECK(testmap.hasPath("node2", "node4") == 1);
+
+	//TESTS WITH CLOSED NODES
+	std::vector<Node> closedRoads;
+	closedRoads.push_back(t3);
+	CHECK(testmap.hasPath("node1", "node3", closedRoads) == 0);
+	CHECK(testmap.hasPath("node1", "node4", closedRoads) == 0);
+	CHECK(testmap.hasPath("node2", "node4", closedRoads) == 0);
+	CHECK(testmap.hasPath("node3", "node4", closedRoads) == 0);
+	CHECK(testmap.hasPath("node4", "node3", closedRoads) == 0);
+	CHECK(testmap.hasPath("node4", "node1", closedRoads) == 1);
+	closedRoads.push_back(t1);
+	CHECK(testmap.hasPath("node2", "node1", closedRoads) == 0);
+	CHECK(testmap.hasPath("node2", "node3", closedRoads) == 0);
+	CHECK(testmap.hasPath("node2", "node4", closedRoads) == 0);
+	CHECK(testmap.hasPath("node4", "node2", closedRoads) == 1);
+	CHECK(testmap.hasPath("node4", "node1", closedRoads) == 0);
+	CHECK(testmap.hasPath("node4", "node3", closedRoads) == 0);
+	closedRoads.push_back(t4);
+	CHECK(testmap.hasPath("node4", "node2", closedRoads) == 0);
+	CHECK(testmap.hasPath("node4", "node1", closedRoads) == 0);
+	CHECK(testmap.hasPath("node1", "node4", closedRoads) == 0);
 }

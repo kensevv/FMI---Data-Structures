@@ -84,31 +84,37 @@ inline void Map::addEdge(const Node& source, const Node& destination, int weight
 	this->graphAdjacent[source.nodeID].push_back(std::make_pair(destination, weight));
 }
 
-//bool Map::hasPath(const Node& start, const Node& end)
-bool Map::hasPath(const std::string& from, const std::string& to)
+bool Map::hasPath(const std::string& from, const std::string& to, const std::vector<Node>& closedNodes)
 {
 	Node start = findNode(from);
 	Node end = findNode(to);
-
 	std::vector<bool> visited;
 	visited.resize(this->size, false);
+
+	//marking the closedNodes, if any
+	for (size_t i = 0; i < closedNodes.size(); i++)
+	{
+		visited[closedNodes[i].nodeID] = true;
+	}
 	
 	std::queue<Node> q;
-	q.push(start);
-
+	if (!visited[start.nodeID])
+	{
+		q.push(start);
+	}
+	
 	while (!q.empty())
 	{
 		Node crr = q.front();
 		q.pop();
-
 		for (const auto& pair : this->graphAdjacent[crr.nodeID])
 		{
-			if (pair.first == end)
-			{
-				return true;
-			}
 			if (!visited[pair.first.nodeID])
 			{
+				if (pair.first == end)
+				{
+					return true;
+				}
 				visited[pair.first.nodeID] = true;
 				q.push(pair.first);
 			}

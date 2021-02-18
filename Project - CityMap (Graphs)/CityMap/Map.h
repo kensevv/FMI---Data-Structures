@@ -25,15 +25,16 @@ private:
 	unsigned int currID;
 	std::vector<std::list<std::pair<Node,int>>> graphAdjacent; // pair - node, distance
 
-	Node findNode(const std::string& location);
+	
 public:
 	Map(std::ifstream& in);
 	Node addNode(const std::string& location);
 	void addEdge(const Node& source, const Node& destination, int distance);
-
+	Node findNode(const std::string& location);
 	void updateMapFile(std::ofstream& out);
 
-	bool hasPath(const std::string& start, const std::string& end);
+	//bool hasPath(const std::string& start, const std::string& end);
+	bool hasPath(const std::string& start, const std::string& end, const std::vector<Node>& closedNodes = {});
 
 	//for doctest purposes
 	const unsigned int getSize()const;
