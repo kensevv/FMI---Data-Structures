@@ -132,3 +132,48 @@ TEST_CASE("hasPath Tests with / without closed roads given")
 	CHECK(testmap.hasPath("node4", "node1", closedRoads) == 0);
 	CHECK(testmap.hasPath("node1", "node4", closedRoads) == 0);
 }
+
+TEST_CASE("ThreeShortestWays Tests")
+{
+	std::ifstream in("doctestMAP tests.txt");
+	Map testmap(in);
+	Node t1("node1", 0);
+	Node t2("node2", 1);
+	Node t3("node3", 2);
+	Node t4("node4", 3);
+/*
+node1 node2 1 node3 2
+node2 node3 3
+node3 node4 4
+node4
+*/
+	//TESTS FOR NO CLOSED NODES
+	std::vector<std::vector<Node>> paths = testmap.ThreeShortestWays("node1", "node4");
+	std::vector<Node> correctPath1 = {t1,t3,t4}; // distance == 6
+	std::vector<Node> correctPath2 = {t1,t2,t3,t4}; // distance == 8
+	CHECK(paths[0] == correctPath1);
+	CHECK(paths[1] == correctPath2);
+	CHECK(paths.size() == 2);
+	//CLOSING ROAD
+	std::vector<Node> closedRoads;
+	closedRoads.push_back(t2);
+	paths = testmap.ThreeShortestWays("node1", "node4", closedRoads);
+	CHECK(paths.size() == 1);
+	CHECK(paths[0] == correctPath1);
+	//ADDING LONGER / SHORTER CORRECT PATHS
+	testmap.addEdge(t1, t4, 50); // longer than others, but direct for BFS
+	paths = testmap.ThreeShortestWays("node1", "node4");
+	std::vector<Node> correctPath3 = { t1,t4 }; // distance = 50
+	CHECK(paths.size() == 3);
+	CHECK(paths[0] == correctPath1);
+	CHECK(paths[1] == correctPath2);
+	CHECK(paths[2] == correctPath3);
+	//CHECK IF RETURNS ONLY 3 PATHS
+	testmap.addEdge(t2, t4, 7); // -> should be 2nd longest path.
+	std::vector<Node> correctPath4 = { t1,t2,t4 }; // distance = 7
+	paths = testmap.ThreeShortestWays("node1", "node4");
+	CHECK(paths.size() == 3);
+	CHECK(paths[0] == correctPath1);
+	CHECK(paths[1] == correctPath4);
+	CHECK(paths[2] == correctPath2);
+}

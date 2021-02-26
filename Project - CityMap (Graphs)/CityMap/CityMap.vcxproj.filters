@@ -43,5 +43,8 @@
     <Text Include="map.txt">
       <Filter>Source Files</Filter>
     </Text>
+    <Text Include="doctestMAP tests.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
