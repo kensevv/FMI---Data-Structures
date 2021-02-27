@@ -3,6 +3,7 @@
 
 #include "doctest.h"
 #include "Map.h"
+#include "Controller.h"
 
 
 /*
@@ -154,8 +155,14 @@ node4
 	CHECK(paths[0] == correctPath1);
 	CHECK(paths[1] == correctPath2);
 	CHECK(paths.size() == 2);
-	//CLOSING ROAD
+	//no path t1->t4, closing t3
 	std::vector<Node> closedRoads;
+	closedRoads.push_back(t3);
+	paths = testmap.ThreeShortestWays("node1", "node4", closedRoads);
+	CHECK(paths.size() == 0);
+	CHECK(paths.empty()==1);
+	closedRoads.erase(closedRoads.begin());
+	//CLOSING ROAD
 	closedRoads.push_back(t2);
 	paths = testmap.ThreeShortestWays("node1", "node4", closedRoads);
 	CHECK(paths.size() == 1);
@@ -176,4 +183,12 @@ node4
 	CHECK(paths[0] == correctPath1);
 	CHECK(paths[1] == correctPath4);
 	CHECK(paths[2] == correctPath2);
+}
+
+TEST_CASE("Controller Functions TESTS")
+{
+	std::ifstream in("doctestMAP tests.txt");
+	//Controller constructor test
+	Controller controller(in);
+	CHECK(controller.location() == "node1");
 }

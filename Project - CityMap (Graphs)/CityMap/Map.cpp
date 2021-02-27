@@ -24,7 +24,8 @@ Node Map::findNode(const std::string& location)
 		}
 		
 	}
-	return Node("", -1);
+	Node defaultNode("", -1);
+	return defaultNode;
 }
 
 bool Map::pathIsNotVisited(const std::pair<Node, int>& pair, const std::vector<std::pair<Node, int>>& path)
@@ -56,6 +57,10 @@ void Map::sortAllPathsByDistance(std::vector<std::vector<std::pair<Node, int>>>&
 
 	size_t size = allpaths.size();
 
+	if (size == 0)
+	{
+		return;
+	}
 	for (size_t i = 0; i < size - 1; i++)
 	{
 		for (size_t j = 0; j < size - i - 1; j++)
@@ -189,7 +194,6 @@ std::vector<std::vector<Node>> Map::ThreeShortestWays(const std::string& from, c
 	{
 		visited[node.nodeID] = true;
 	}
-
 	std::vector<std::vector<std::pair<Node,int>>> allPaths;
 	std::vector<std::pair<Node,int>> path;
 	std::queue<std::vector<std::pair<Node,int>>> q;
@@ -226,7 +230,8 @@ std::vector<std::vector<Node>> Map::ThreeShortestWays(const std::string& from, c
 		}
 	}
 	// so far i have all paths -> we need to determine the distance in each and return the shortest 3
-	sortAllPathsByDistance(allPaths);
+	
+	sortAllPathsByDistance(allPaths); // BUG
 	
 	std::vector<std::vector<Node>> result;
 	// creating vector of nodes only -> removing pairs
